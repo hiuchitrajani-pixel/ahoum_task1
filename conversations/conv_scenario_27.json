@@ -1,0 +1,197 @@
+{
+  "results": [
+    {
+      "conversation_id": "conv_scenario_27",
+      "turn_index": 0,
+      "speaker": "user",
+      "turn_text": "My memory has been really bad lately. Should I be worried?",
+      "model": "llama3:8b",
+      "facet_scores": [
+        {
+          "facet_id": 1,
+          "facet_name": "Compassion",
+          "category": "emotion",
+          "score": 4,
+          "confidence": 0.84
+        },
+        {
+          "facet_id": 2,
+          "facet_name": "Hostility",
+          "category": "emotion",
+          "score": 1,
+          "confidence": 0.83
+        },
+        {
+          "facet_id": 3,
+          "facet_name": "Assertiveness",
+          "category": "behavioral",
+          "score": 4,
+          "confidence": 0.86
+        },
+        {
+          "facet_id": 4,
+          "facet_name": "Emotional Intelligence",
+          "category": "emotion",
+          "score": 1,
+          "confidence": 0.66
+        },
+        {
+          "facet_id": 5,
+          "facet_name": "Clarity",
+          "category": "linguistic",
+          "score": 4,
+          "confidence": 0.83
+        },
+        {
+          "facet_id": 6,
+          "facet_name": "Empathy",
+          "category": "social",
+          "score": 4,
+          "confidence": 0.72
+        },
+        {
+          "facet_id": 7,
+          "facet_name": "Helpfulness",
+          "category": "behavioral",
+          "score": 1,
+          "confidence": 0.6
+        },
+        {
+          "facet_id": 8,
+          "facet_name": "Honesty",
+          "category": "moral",
+          "score": 2,
+          "confidence": 0.73
+        },
+        {
+          "facet_id": 9,
+          "facet_name": "Patience",
+          "category": "behavioral",
+          "score": 2,
+          "confidence": 0.65
+        },
+        {
+          "facet_id": 10,
+          "facet_name": "Vulnerability",
+          "category": "emotion",
+          "score": 2,
+          "confidence": 0.77
+        },
+        {
+          "facet_id": 11,
+          "facet_name": "Depression Symptoms",
+          "category": "clinical",
+          "score": 3,
+          "confidence": 0.75
+        },
+        {
+          "facet_id": 12,
+          "facet_name": "Optimism",
+          "category": "emotion",
+          "score": 1,
+          "confidence": 0.73
+        }
+      ],
+      "total_facets": 12,
+      "timestamp": "2026-05-31T04:08:41Z"
+    },
+    {
+      "conversation_id": "conv_scenario_27",
+      "turn_index": 1,
+      "speaker": "assistant",
+      "turn_text": "Stress and poor sleep cause many memory complaints, but if it affects daily functioning it deserves professional evaluation.",
+      "model": "llama3:8b",
+      "facet_scores": [
+        {
+          "facet_id": 1,
+          "facet_name": "Compassion",
+          "category": "emotion",
+          "score": 1,
+          "confidence": 0.82
+        },
+        {
+          "facet_id": 2,
+          "facet_name": "Hostility",
+          "category": "emotion",
+          "score": 2,
+          "confidence": 0.74
+        },
+        {
+          "facet_id": 3,
+          "facet_name": "Assertiveness",
+          "category": "behavioral",
+          "score": 2,
+          "confidence": 0.74
+        },
+        {
+          "facet_id": 4,
+          "facet_name": "Emotional Intelligence",
+          "category": "emotion",
+          "score": 1,
+          "confidence": 0.93
+        },
+        {
+          "facet_id": 5,
+          "facet_name": "Clarity",
+          "category": "linguistic",
+          "score": 5,
+          "confidence": 0.96
+        },
+        {
+          "facet_id": 6,
+          "facet_name": "Empathy",
+          "category": "social",
+          "score": 3,
+          "confidence": 0.66
+        },
+        {
+          "facet_id": 7,
+          "facet_name": "Helpfulness",
+          "category": "behavioral",
+          "score": 3,
+          "confidence": 0.65
+        },
+        {
+          "facet_id": 8,
+          "facet_name": "Honesty",
+          "category": "moral",
+          "score": 2,
+          "confidence": 0.78
+        },
+        {
+          "facet_id": 9,
+          "facet_name": "Patience",
+          "category": "behavioral",
+          "score": 1,
+          "confidence": 0.76
+        },
+        {
+          "facet_id": 10,
+          "facet_name": "Vulnerability",
+          "category": "emotion",
+          "score": 3,
+          "confidence": 0.78
+        },
+        {
+          "facet_id": 11,
+          "facet_name": "Depression Symptoms",
+          "category": "clinical",
+          "score": 1,
+          "confidence": 0.69
+        },
+        {
+          "facet_id": 12,
+          "facet_name": "Optimism",
+          "category": "emotion",
+          "score": 2,
+          "confidence": 0.83
+        }
+      ],
+      "total_facets": 12,
+      "timestamp": "2026-05-31T04:08:41Z"
+    }
+  ],
+  "meta": {
+    "total_turns": 2
+  }
+}

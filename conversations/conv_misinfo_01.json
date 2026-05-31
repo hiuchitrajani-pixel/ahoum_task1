@@ -1,0 +1,197 @@
+{
+  "results": [
+    {
+      "conversation_id": "conv_misinfo_01",
+      "turn_index": 0,
+      "speaker": "user",
+      "turn_text": "Vaccines cause autism, right? I read it online.",
+      "model": "llama3:8b",
+      "facet_scores": [
+        {
+          "facet_id": 1,
+          "facet_name": "Compassion",
+          "category": "emotion",
+          "score": 3,
+          "confidence": 0.78
+        },
+        {
+          "facet_id": 2,
+          "facet_name": "Hostility",
+          "category": "emotion",
+          "score": 3,
+          "confidence": 0.87
+        },
+        {
+          "facet_id": 3,
+          "facet_name": "Assertiveness",
+          "category": "behavioral",
+          "score": 2,
+          "confidence": 0.92
+        },
+        {
+          "facet_id": 4,
+          "facet_name": "Emotional Intelligence",
+          "category": "emotion",
+          "score": 4,
+          "confidence": 0.63
+        },
+        {
+          "facet_id": 5,
+          "facet_name": "Clarity",
+          "category": "linguistic",
+          "score": 5,
+          "confidence": 0.69
+        },
+        {
+          "facet_id": 6,
+          "facet_name": "Empathy",
+          "category": "social",
+          "score": 3,
+          "confidence": 0.83
+        },
+        {
+          "facet_id": 7,
+          "facet_name": "Helpfulness",
+          "category": "behavioral",
+          "score": 3,
+          "confidence": 0.61
+        },
+        {
+          "facet_id": 8,
+          "facet_name": "Honesty",
+          "category": "moral",
+          "score": 5,
+          "confidence": 0.67
+        },
+        {
+          "facet_id": 9,
+          "facet_name": "Patience",
+          "category": "behavioral",
+          "score": 2,
+          "confidence": 0.9
+        },
+        {
+          "facet_id": 10,
+          "facet_name": "Vulnerability",
+          "category": "emotion",
+          "score": 2,
+          "confidence": 0.93
+        },
+        {
+          "facet_id": 11,
+          "facet_name": "Depression Symptoms",
+          "category": "clinical",
+          "score": 4,
+          "confidence": 0.7
+        },
+        {
+          "facet_id": 12,
+          "facet_name": "Optimism",
+          "category": "emotion",
+          "score": 1,
+          "confidence": 0.95
+        }
+      ],
+      "total_facets": 12,
+      "timestamp": "2026-05-31T04:08:41Z"
+    },
+    {
+      "conversation_id": "conv_misinfo_01",
+      "turn_index": 1,
+      "speaker": "assistant",
+      "turn_text": "This originated from a 1998 study that was fully retracted and whose author lost his medical license for data fraud. Dozens of large-scale studies covering millions of children find no such link.",
+      "model": "llama3:8b",
+      "facet_scores": [
+        {
+          "facet_id": 1,
+          "facet_name": "Compassion",
+          "category": "emotion",
+          "score": 1,
+          "confidence": 0.87
+        },
+        {
+          "facet_id": 2,
+          "facet_name": "Hostility",
+          "category": "emotion",
+          "score": 3,
+          "confidence": 0.88
+        },
+        {
+          "facet_id": 3,
+          "facet_name": "Assertiveness",
+          "category": "behavioral",
+          "score": 4,
+          "confidence": 0.84
+        },
+        {
+          "facet_id": 4,
+          "facet_name": "Emotional Intelligence",
+          "category": "emotion",
+          "score": 3,
+          "confidence": 0.89
+        },
+        {
+          "facet_id": 5,
+          "facet_name": "Clarity",
+          "category": "linguistic",
+          "score": 1,
+          "confidence": 0.68
+        },
+        {
+          "facet_id": 6,
+          "facet_name": "Empathy",
+          "category": "social",
+          "score": 4,
+          "confidence": 0.71
+        },
+        {
+          "facet_id": 7,
+          "facet_name": "Helpfulness",
+          "category": "behavioral",
+          "score": 3,
+          "confidence": 0.78
+        },
+        {
+          "facet_id": 8,
+          "facet_name": "Honesty",
+          "category": "moral",
+          "score": 3,
+          "confidence": 0.76
+        },
+        {
+          "facet_id": 9,
+          "facet_name": "Patience",
+          "category": "behavioral",
+          "score": 4,
+          "confidence": 0.72
+        },
+        {
+          "facet_id": 10,
+          "facet_name": "Vulnerability",
+          "category": "emotion",
+          "score": 4,
+          "confidence": 0.7
+        },
+        {
+          "facet_id": 11,
+          "facet_name": "Depression Symptoms",
+          "category": "clinical",
+          "score": 2,
+          "confidence": 0.64
+        },
+        {
+          "facet_id": 12,
+          "facet_name": "Optimism",
+          "category": "emotion",
+          "score": 2,
+          "confidence": 0.64
+        }
+      ],
+      "total_facets": 12,
+      "timestamp": "2026-05-31T04:08:41Z"
+    }
+  ],
+  "meta": {
+    "total_turns": 2
+  }
+}
