@@ -1,181 +1,209 @@
-import os
-os.environ["OPENBLAS_NUM_THREADS"] = "1"
-os.environ["OMP_NUM_THREADS"] = "1"
-os.environ["GOTO_NUM_THREADS"] = "1"
-
 import json
-import time
 import logging
-from typing import List, Dict, Optional
+import os
+import time
+from typing import Dict, List, Optional
 
-import requests
 import pandas as pd
+import requests
 
-from prompt_builder import make_batches, build_prompt
+from prompt_builder import build_prompt, make_batches
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s  %(levelname)s  %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
 log = logging.getLogger(__name__)
 
-OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/chat")
-MODEL_NAME = os.getenv("MODEL_NAME", "qwen2.5:1.5b")
-BATCH_SIZE = int(os.getenv("BATCH_SIZE", "25"))
-MAX_RETRIES = int(os.getenv("MAX_RETRIES", "3"))
-RETRY_DELAY = float(os.getenv("RETRY_DELAY", "2.0"))
-FACETS_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'facets_cleaned.csv')
+OLLAMA_URL = os.getenv('OLLAMA_URL', 'http://127.0.0.1:11434/api/chat')
+MODEL_NAME = os.getenv('MODEL_NAME', 'qwen2.5:1.5b')
+BATCH_SIZE = int(os.getenv('BATCH_SIZE', '20'))
+MAX_RETRIES = int(os.getenv('MAX_RETRIES', '3'))
+RETRY_DELAY = float(os.getenv('RETRY_DELAY', '2.0'))
+FACETS_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'facets_benchmark_cleaned.csv')
 
 
-def load_facets(path=FACETS_CSV) -> List[Dict]:
+def load_facets(path: str = FACETS_CSV) -> List[Dict]:
     df = pd.read_csv(path)
     df = df[df['observable_from_text'] == True].reset_index(drop=True)
-    log.info(f"loaded {len(df)} observable facets")
     return df.to_dict(orient='records')
 
 
 def call_llm(messages: List[Dict]) -> Optional[str]:
     payload = {
-        "model": MODEL_NAME,
-        "messages": messages,
-        "stream": False,
-        "options": {
-            "temperature": 0.1,
-            "top_p": 0.9
-        }
+        'model': MODEL_NAME,
+        'messages': messages,
+        'stream': False,
+        'options': {'temperature': 0.0, 'top_p': 0.9}
     }
-
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            r = requests.post(OLLAMA_URL, json=payload, timeout=120)
+            r = requests.post(OLLAMA_URL, json=payload, timeout=180)
             r.raise_for_status()
-            return r.json()["message"]["content"]
+            return r.json()['message']['content']
+        except requests.exceptions.ConnectionError:
+            raise RuntimeError(f'Could not connect to Ollama at {OLLAMA_URL}. Start it with: ollama serve')
         except Exception as e:
-            log.warning(f"attempt {attempt}/{MAX_RETRIES} failed: {e}")
+            log.warning(f'Attempt {attempt}/{MAX_RETRIES} failed: {e}')
             if attempt < MAX_RETRIES:
                 time.sleep(RETRY_DELAY * attempt)
-
     return None
+
+
+def _strip_json(raw: str) -> str:
+    text = raw.strip()
+    if text.startswith('```'):
+        lines = text.splitlines()
+        text = '\n'.join(lines[1:])
+        if text.endswith('```'):
+            text = text[:-3].strip()
+    return text
+
+
+def _fallback(batch: List[Dict]) -> List[Dict]:
+    return [
+        {
+            'facet_id': f['facet_id'],
+            'facet_name': f['facet_name'],
+            'category': f['category'],
+            'score': 0,
+            'confidence': 0.0,
+            'evidence': 'no response'
+        }
+        for f in batch
+    ]
 
 
 def parse_llm_output(raw: str, batch: List[Dict]) -> List[Dict]:
     try:
-        text = raw.strip()
-
-        if text.startswith("```"):
-            lines = text.split("\n")
-            text = "\n".join(lines[1:])
-            text = text.rsplit("```", 1)[0].strip()
-
-        parsed = json.loads(text)
-        returned_ids = {item.get("facet_id") for item in parsed}
+        parsed = json.loads(_strip_json(raw))
+        by_id = {item.get('facet_id'): item for item in parsed if isinstance(item, dict)}
         results = []
-
         for f in batch:
-            if f["facet_id"] in returned_ids:
-                match = next(item for item in parsed if item.get("facet_id") == f["facet_id"])
-                results.append({
-                    "facet_id": f["facet_id"],
-                    "facet_name": f["facet_name"],
-                    "category": f["category"],
-                    "score": max(1, min(5, int(match.get("score", 1)))),
-                    "confidence": max(0.0, min(1.0, float(match.get("confidence", 0.5))))
-                })
-            else:
-                log.warning(f"facet {f['facet_id']} missing from output, using fallback")
-                results.append({
-                    "facet_id": f["facet_id"],
-                    "facet_name": f["facet_name"],
-                    "category": f["category"],
-                    "score": 1,
-                    "confidence": 0.0
-                })
+            item = by_id.get(f['facet_id'], {})
+            score = item.get('score', 0)
+            confidence = item.get('confidence', 0.0)
+            evidence = str(item.get('evidence', 'not inferable'))[:80]
 
+            try:
+                score = int(score)
+            except Exception:
+                score = 0
+
+            try:
+                confidence = float(confidence)
+            except Exception:
+                confidence = 0.0
+
+            results.append({
+                'facet_id': f['facet_id'],
+                'facet_name': f['facet_name'],
+                'category': f['category'],
+                'score': max(-2, min(2, score)),
+                'confidence': max(0.0, min(1.0, confidence)),
+                'evidence': evidence
+            })
         return results
-
     except Exception as e:
-        log.error(f"parse failed: {e}\nraw: {raw[:300]}")
-        return [
-            {
-                "facet_id": f["facet_id"],
-                "facet_name": f["facet_name"],
-                "category": f["category"],
-                "score": 1,
-                "confidence": 0.0
-            }
-            for f in batch
-        ]
+        log.error(f'Parse failed: {e}')
+        return _fallback(batch)
+
+
+def filter_facets_for_speaker(facets: List[Dict], speaker: str) -> List[Dict]:
+    if speaker not in {'user', 'assistant'}:
+        return facets
+    return [f for f in facets if f.get('applicable_to', 'both') in {'both', speaker}]
+
+
+def compute_final_turn_score(facet_scores: List[Dict]) -> Dict:
+    if not facet_scores:
+        return {'final_turn_score': 0.0, 'final_turn_confidence': 0.0}
+
+    weighted_sum = 0.0
+    confidence_sum = 0.0
+
+    for item in facet_scores:
+        score = item.get('score', 0)
+        conf = item.get('confidence', 0.0)
+        weighted_sum += score * conf
+        confidence_sum += conf
+
+    if confidence_sum == 0:
+        return {'final_turn_score': 0.0, 'final_turn_confidence': 0.0}
+
+    final_score = weighted_sum / confidence_sum
+    avg_conf = confidence_sum / len(facet_scores)
+
+    return {
+        'final_turn_score': round(final_score, 3),
+        'final_turn_confidence': round(avg_conf, 3)
+    }
 
 
 def evaluate_turn(
     turn_text: str,
-    conversation_id: str = "conv_001",
+    conversation_id: str = 'conv_001',
     turn_index: int = 0,
-    speaker: str = "user",
+    speaker: str = 'user',
     facets: Optional[List[Dict]] = None
 ) -> Dict:
-    if facets is None:
-        facets = load_facets()
-
+    facets = load_facets() if facets is None else facets
+    facets = filter_facets_for_speaker(facets, speaker)
     batches = make_batches(facets, BATCH_SIZE)
     all_scores = []
 
-    log.info(f"[{conversation_id} turn {turn_index}] {len(facets)} facets, {len(batches)} batches")
+    log.info(f'[{conversation_id} turn {turn_index}] scoring {len(facets)} facets in {len(batches)} batches')
 
-    for i, batch in enumerate(batches):
+    for i, batch in enumerate(batches, start=1):
         messages = build_prompt(turn_text, batch)
         raw = call_llm(messages)
-
-        if raw is None:
-            log.error(f"batch {i} failed, using fallback scores")
-            scores = [
-                {
-                    "facet_id": f["facet_id"],
-                    "facet_name": f["facet_name"],
-                    "category": f["category"],
-                    "score": 1,
-                    "confidence": 0.0
-                }
-                for f in batch
-            ]
-        else:
-            scores = parse_llm_output(raw, batch)
-
+        scores = parse_llm_output(raw, batch) if raw is not None else _fallback(batch)
         all_scores.extend(scores)
-        log.info(f"batch {i+1}/{len(batches)} done")
+        log.info(f'[{conversation_id} turn {turn_index}] batch {i}/{len(batches)} done')
+
+    final_summary = compute_final_turn_score(all_scores)
 
     return {
-        "conversation_id": conversation_id,
-        "turn_index": turn_index,
-        "speaker": speaker,
-        "turn_text": turn_text,
-        "model": MODEL_NAME,
-        "facet_scores": all_scores,
-        "total_facets": len(all_scores),
-        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        'conversation_id': conversation_id,
+        'turn_index': turn_index,
+        'speaker': speaker,
+        'turn_text': turn_text,
+        'model': MODEL_NAME,
+        'facet_scores': all_scores,
+        'total_facets': len(all_scores),
+        'final_turn_score': final_summary['final_turn_score'],
+        'final_turn_confidence': final_summary['final_turn_confidence'],
+        'timestamp': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
     }
 
 
-def evaluate_conversation(turns: List[Dict], conv_id: str = None) -> List[Dict]:
-    if conv_id is None:
-        conv_id = f"conv_{int(time.time())}"
-
+def evaluate_conversation(turns: List[Dict], conv_id: Optional[str] = None) -> List[Dict]:
+    conv_id = conv_id or 'conversation'
     facets = load_facets()
     results = []
-
     for idx, turn in enumerate(turns):
-        result = evaluate_turn(
-            turn_text=turn["text"],
+        results.append(evaluate_turn(
+            turn_text=turn['text'],
             conversation_id=conv_id,
             turn_index=idx,
-            speaker=turn.get("speaker", "user"),
+            speaker=turn.get('speaker', 'user'),
             facets=facets
-        )
-        results.append(result)
-
+        ))
     return results
 
 
-if __name__ == "__main__":
-    import sys
+def compute_conversation_final_score(results: List[Dict]) -> Dict:
+    if not results:
+        return {'final_conversation_score': 0.0, 'final_conversation_confidence': 0.0}
 
-    text = sys.argv[1] if len(sys.argv) > 1 else "I'm really struggling. Everything feels hopeless and I don't know what to do."
-    result = evaluate_turn(text)
-    print(json.dumps(result, indent=2))
+    score_sum = 0.0
+    conf_sum = 0.0
+
+    for r in results:
+        score_sum += r.get('final_turn_score', 0.0) * r.get('final_turn_confidence', 0.0)
+        conf_sum += r.get('final_turn_confidence', 0.0)
+
+    if conf_sum == 0:
+        return {'final_conversation_score': 0.0, 'final_conversation_confidence': 0.0}
+
+    return {
+        'final_conversation_score': round(score_sum / conf_sum, 3),
+        'final_conversation_confidence': round(conf_sum / len(results), 3)
+    }

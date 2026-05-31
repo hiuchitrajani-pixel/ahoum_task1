@@ -1,9 +1,5 @@
-import os
-os.environ["OPENBLAS_NUM_THREADS"] = "1"
-os.environ["OMP_NUM_THREADS"] = "1"
-os.environ["GOTO_NUM_THREADS"] = "1"
-
 import sys
+import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 import json
@@ -21,261 +17,168 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-:root {
-    --bg: #f7f6f2;
-    --surface: #ffffff;
-    --surface-2: #f1eee8;
-    --text: #1f1f1f;
-    --muted: #5f6368;
-    --primary: #0b6b72;
-    --primary-dark: #084e53;
-    --border: #ddd7cd;
-    --success: #d9f5df;
-    --info: #e8f2ff;
-}
-
-html, body, [data-testid="stAppViewContainer"] {
-    background: var(--bg);
-    color: var(--text);
-}
-
-[data-testid="stSidebar"] {
-    background: #191816;
-}
-
-[data-testid="stSidebar"] * {
-    color: #f3f3f3 !important;
-}
-
-.block-container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-h1, h2, h3 {
-    color: var(--primary);
-    font-weight: 700;
-}
-
-div[data-baseweb="tab-list"] {
-    gap: 8px;
-}
-
-button[data-baseweb="tab"] {
-    background: #ece8df !important;
-    border-radius: 10px !important;
-    padding: 10px 16px !important;
-    color: #222 !important;
-    border: 1px solid #d8d0c3 !important;
-}
-
-button[data-baseweb="tab"][aria-selected="true"] {
-    background: var(--primary) !important;
-    color: white !important;
-    border: 1px solid var(--primary) !important;
-}
-
-.stButton > button {
-    background: var(--primary);
-    color: white;
-    border-radius: 10px;
-    border: none;
-    padding: 0.6rem 1rem;
-    font-weight: 600;
-}
-
-.stButton > button:hover {
-    background: var(--primary-dark);
-    color: white;
-}
-
-div[data-testid="stTextArea"] textarea,
-div[data-testid="stTextInput"] input {
-    background: #ffffff !important;
-    color: #222 !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 10px !important;
-}
-
-div[data-testid="stSelectbox"] > div,
-div[data-testid="stMultiSelect"] > div {
-    color: #222 !important;
-}
-
-[data-testid="stMetricValue"] {
-    color: var(--primary) !important;
-}
-
-[data-testid="stDataFrame"] {
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.custom-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 1rem 1.2rem;
-    border-radius: 14px;
-    margin-bottom: 1rem;
-}
-
-.info-box {
-    background: var(--info);
-    border: 1px solid #cfe1ff;
-    color: #204060;
-    padding: 0.9rem 1rem;
-    border-radius: 12px;
-    margin: 0.5rem 0 1rem 0;
-}
-
-.success-box {
-    background: var(--success);
-    border: 1px solid #bfe6c8;
-    color: #1d5b2b;
-    padding: 0.9rem 1rem;
-    border-radius: 12px;
-    margin: 0.5rem 0 1rem 0;
-}
+  [data-testid="stAppViewContainer"] { background: #f7f6f2; }
+  [data-testid="stSidebar"] { background: #1c1b19; }
+  [data-testid="stSidebar"] * { color: #cdccca !important; }
+  h1 { color: #01696f !important; }
+  .stButton>button { background: #01696f; color: white; border: none; border-radius: 8px; }
+  .stButton>button:hover { background: #0c4e54; }
+  .score-badge { padding: 3px 10px; border-radius: 999px; font-size: 0.85rem; display: inline-block; margin: 2px 0; }
 </style>
 """, unsafe_allow_html=True)
 
 st.title("🧠 Ahoum Conversation Evaluator")
-st.caption("Production-style benchmark for scoring conversation turns across 300+ facets")
+st.caption("300-facet benchmark · Ollama batched inference · final turn and conversation scoring")
 
 with st.sidebar:
     st.markdown("## ⚙️ Settings")
-
-    model = st.selectbox(
-        "Model",
-        [
-            "qwen2.5:1.5b",
-            "qwen2:7b",
-            "qwen2.5:7b",
-            "llama3:8b"
-        ],
-        index=0
-    )
-
-    batch_size = st.slider("Facets per batch", 10, 50, 25, 5)
-
+    model = st.selectbox("Model", ["qwen2.5:1.5b", "llama3:8b", "mistral:7b"], index=0)
+    batch_size = st.slider("Facets per batch", 10, 50, 20, 5)
     st.markdown("---")
     st.markdown("### Categories")
-    all_cats = [
-        "behavioral", "emotion", "cognitive", "personality",
-        "social", "moral", "linguistic", "professional",
-        "spiritual", "clinical"
-    ]
-    selected_cats = st.multiselect("Include", all_cats, default=all_cats[:6])
-
+    all_cats = ["behavioral", "emotion", "pragmatic", "social", "moral", "linguistic", "safety", "clinical", "other"]
+    selected_cats = st.multiselect("Include", all_cats, default=all_cats)
     st.markdown("---")
-    st.caption("Tip: use smaller models first on low-VRAM systems.")
+    st.markdown("### Score Scale")
+    for score, label, color in [
+        (-2, "Strong negative evidence", "#fee2e2"),
+        (-1, "Slight negative evidence", "#fecaca"),
+        (0, "Unclear / not inferable", "#e5e7eb"),
+        (1, "Clear positive evidence", "#d1fae5"),
+        (2, "Strong positive evidence", "#bbf7d0")
+    ]:
+        st.markdown(
+            f'<span class="score-badge" style="background:{color};"><b>{score}</b> — {label}</span>',
+            unsafe_allow_html=True
+        )
 
-tab1, tab2, tab3, tab4 = st.tabs([
-    "📝 Single Turn",
-    "💬 Full Conversation",
-    "📊 Browse Results",
-    "📁 Facet Explorer"
-])
+tab1, tab2, tab3, tab4 = st.tabs(["📝 Single Turn", "💬 Full Conversation", "📊 Browse Results", "📚 Facet Explorer"])
+
+
+def build_mock_result(turn_text, speaker):
+    random.seed(hash(turn_text) % 100000)
+    mock_facets = [
+        {"facet_id": 1, "facet_name": "Compassion", "category": "emotion"},
+        {"facet_id": 2, "facet_name": "Hostility", "category": "safety"},
+        {"facet_id": 3, "facet_name": "Assertiveness", "category": "pragmatic"},
+        {"facet_id": 4, "facet_name": "Clarity", "category": "linguistic"},
+        {"facet_id": 5, "facet_name": "Empathy", "category": "emotion"},
+        {"facet_id": 6, "facet_name": "Helpfulness", "category": "behavioral"},
+        {"facet_id": 7, "facet_name": "Honesty", "category": "moral"},
+        {"facet_id": 8, "facet_name": "Patience", "category": "behavioral"},
+        {"facet_id": 9, "facet_name": "Anxiety", "category": "clinical"},
+        {"facet_id": 10, "facet_name": "Warmth", "category": "pragmatic"},
+    ]
+    mock_scores = []
+    for f in mock_facets:
+        score = random.choice([-2, -1, 0, 1, 2])
+        conf = round(random.uniform(0.55, 0.95), 2)
+        mock_scores.append({
+            **f,
+            "score": score,
+            "confidence": conf,
+            "evidence": "demo signal"
+        })
+
+    if mock_scores:
+        weighted = sum(x["score"] * x["confidence"] for x in mock_scores)
+        conf_sum = sum(x["confidence"] for x in mock_scores)
+        final_turn_score = round(weighted / conf_sum, 3) if conf_sum else 0.0
+        final_turn_confidence = round(conf_sum / len(mock_scores), 3)
+    else:
+        final_turn_score = 0.0
+        final_turn_confidence = 0.0
+
+    return {
+        "conversation_id": "demo",
+        "turn_index": 0,
+        "speaker": speaker,
+        "turn_text": turn_text,
+        "model": "mock",
+        "facet_scores": mock_scores,
+        "total_facets": len(mock_scores),
+        "final_turn_score": final_turn_score,
+        "final_turn_confidence": final_turn_confidence
+    }
+
 
 with tab1:
-    st.subheader("Score a Single Turn")
-    st.markdown('<div class="info-box">Enter one user or assistant message and get facet-wise scores with confidence values.</div>', unsafe_allow_html=True)
-
+    st.subheader("Score a Single Conversation Turn")
     speaker = st.radio("Speaker", ["user", "assistant"], horizontal=True)
     turn_text = st.text_area(
         "Turn text",
-        placeholder="Example: I feel really hopeless and overwhelmed right now.",
-        height=140
+        placeholder='e.g. "I do not see the point anymore. Everything feels hopeless."',
+        height=120
     )
 
-    if st.button("🚀 Evaluate Single Turn"):
-        if not turn_text.strip():
-            st.warning("Please enter some text first.")
-        else:
-            with st.spinner("Running evaluation..."):
-                try:
-                    os.environ["MODEL_NAME"] = model
-                    os.environ["BATCH_SIZE"] = str(batch_size)
+    col1, col2 = st.columns([1, 5])
+    with col1:
+        run_btn = st.button("🚀 Evaluate", type="primary", use_container_width=True)
+    with col2:
+        st.info(f"~{max(1, 300 // batch_size)} LLM calls may be made. Ensure Ollama is running with `ollama serve`.")
 
-                    from evaluator import evaluate_turn, load_facets
+    if run_btn and turn_text.strip():
+        with st.spinner("Running inference..."):
+            try:
+                os.environ["MODEL_NAME"] = model
+                os.environ["BATCH_SIZE"] = str(batch_size)
+                from evaluator import evaluate_turn, load_facets
+                facets = load_facets()
+                if selected_cats:
+                    facets = [f for f in facets if f["category"] in selected_cats]
+                result = evaluate_turn(turn_text, speaker=speaker, facets=facets)
+            except Exception as e:
+                st.warning(f"Ollama not reachable ({e}). Showing mock scores for demo.")
+                result = build_mock_result(turn_text, speaker)
 
-                    facets = load_facets()
-                    if selected_cats:
-                        facets = [f for f in facets if f["category"] in selected_cats]
+        scores = result["facet_scores"]
+        df = pd.DataFrame(scores)
 
-                    result = evaluate_turn(turn_text, speaker=speaker, facets=facets)
+        st.markdown("---")
+        k1, k2, k3, k4, k5 = st.columns(5)
+        k1.metric("Facets Scored", len(scores))
+        k2.metric("Final Turn Score", f"{result.get('final_turn_score', 0.0):.3f}")
+        k3.metric("Turn Confidence", f"{result.get('final_turn_confidence', 0.0):.3f}")
+        k4.metric("Positive (≥1)", int((df["score"] >= 1).sum()) if not df.empty else 0)
+        k5.metric("Negative (≤-1)", int((df["score"] <= -1).sum()) if not df.empty else 0)
 
-                except Exception:
-                    random.seed(hash(turn_text) % 10000)
-                    mock_facets = [
-                        {"facet_id": 1, "facet_name": "Compassion", "category": "emotion"},
-                        {"facet_id": 2, "facet_name": "Hostility", "category": "emotion"},
-                        {"facet_id": 3, "facet_name": "Assertiveness", "category": "behavioral"},
-                        {"facet_id": 4, "facet_name": "Emotional Intelligence", "category": "emotion"},
-                        {"facet_id": 5, "facet_name": "Clarity", "category": "linguistic"},
-                        {"facet_id": 6, "facet_name": "Empathy", "category": "social"},
-                        {"facet_id": 7, "facet_name": "Helpfulness", "category": "behavioral"},
-                        {"facet_id": 8, "facet_name": "Honesty", "category": "moral"}
-                    ]
-                    result = {
-                        "conversation_id": "demo",
-                        "turn_index": 0,
-                        "speaker": speaker,
-                        "turn_text": turn_text,
-                        "model": "mock",
-                        "facet_scores": [
-                            {
-                                **f,
-                                "score": random.choice([1, 2, 3, 4, 5]),
-                                "confidence": round(random.uniform(0.60, 0.97), 2)
-                            }
-                            for f in mock_facets
-                        ],
-                        "total_facets": len(mock_facets)
-                    }
-
-            df = pd.DataFrame(result["facet_scores"])
-
-            c1, c2, c3, c4 = st.columns(4)
-            c1.metric("Facets Scored", len(df))
-            c2.metric("Avg Score", f"{df['score'].mean():.2f}")
-            c3.metric("Avg Confidence", f"{df['confidence'].mean():.2f}")
-            c4.metric("High Scores (≥4)", int((df["score"] >= 4).sum()))
-
-            st.markdown("### Category Breakdown")
+        if not df.empty:
+            st.markdown("#### Category Breakdown")
             cat_df = df.groupby("category").agg(
                 mean_score=("score", "mean"),
                 mean_confidence=("confidence", "mean"),
                 count=("facet_id", "count")
-            ).round(2).reset_index()
+            ).round(3).reset_index().sort_values("mean_score", ascending=False)
             st.dataframe(cat_df, use_container_width=True, hide_index=True)
 
-            st.markdown("### Facet Scores")
+            st.markdown("#### All Facet Scores")
+            show_cols = ["facet_name", "category", "score", "confidence", "evidence"]
             st.dataframe(
-                df[["facet_name", "category", "score", "confidence"]].sort_values("score", ascending=False),
+                df[show_cols].sort_values(["score", "confidence"], ascending=[False, False]),
                 use_container_width=True,
+                height=380,
                 hide_index=True
             )
 
-            st.download_button(
-                "⬇️ Download JSON",
-                data=json.dumps(result, indent=2),
-                file_name=f"single_turn_eval_{int(time.time())}.json",
-                mime="application/json"
-            )
+        st.download_button(
+            "⬇️ Download JSON",
+            data=json.dumps(result, indent=2, ensure_ascii=False),
+            file_name=f"eval_{int(time.time())}.json",
+            mime="application/json"
+        )
+
 
 with tab2:
     st.subheader("Score a Full Conversation")
-    st.markdown('<div class="info-box">Write one turn per line using <b>user:</b> or <b>assistant:</b> format.</div>', unsafe_allow_html=True)
-
+    st.info("Prefix each line with `user:` or `assistant:`")
     conv_input = st.text_area(
         "Conversation",
-        value="user: I am not feeling good today\nassistant: I'm sorry you're feeling that way. Want to tell me what happened?",
+        value="user: I feel really anxious about my interview tomorrow.\nassistant: That's completely understandable. What specifically worries you most?\nuser: I'm afraid I'll blank out on technical questions.",
         height=220
     )
+    conv_btn = st.button("🚀 Evaluate Conversation", type="primary")
 
-    if st.button("🚀 Evaluate Conversation"):
+    if conv_btn and conv_input.strip():
         turns = []
         for line in conv_input.strip().split("\n"):
             line = line.strip()
@@ -284,58 +187,170 @@ with tab2:
             elif line.lower().startswith("assistant:"):
                 turns.append({"speaker": "assistant", "text": line[10:].strip()})
 
-        st.markdown(f'<div class="success-box">Parsed {len(turns)} turns successfully.</div>', unsafe_allow_html=True)
-
-        if turns:
-            st.json(turns)
+        if not turns:
+            st.error("No valid turns found. Prefix each line with `user:` or `assistant:`.")
         else:
-            st.warning("No valid turns found. Use format like `user: hello`")
+            with st.spinner("Running conversation evaluation..."):
+                try:
+                    os.environ["MODEL_NAME"] = model
+                    os.environ["BATCH_SIZE"] = str(batch_size)
+                    from evaluator import evaluate_conversation, compute_conversation_final_score, load_facets
+                    facets = load_facets()
+                    if selected_cats:
+                        facets = [f for f in facets if f["category"] in selected_cats]
+
+                    results = []
+                    from evaluator import evaluate_turn
+                    for idx, t in enumerate(turns):
+                        results.append(
+                            evaluate_turn(
+                                turn_text=t["text"],
+                                conversation_id="streamlit_conversation",
+                                turn_index=idx,
+                                speaker=t["speaker"],
+                                facets=facets
+                            )
+                        )
+                    conv_summary = compute_conversation_final_score(results)
+                    conversation_output = {
+                        "conversation_id": "streamlit_conversation",
+                        "turns": turns,
+                        "results": results,
+                        "final_conversation_score": conv_summary["final_conversation_score"],
+                        "final_conversation_confidence": conv_summary["final_conversation_confidence"],
+                        "meta": {
+                            "total_turns": len(results),
+                            "source": "streamlit_ui",
+                            "score_scale": [-2, -1, 0, 1, 2]
+                        }
+                    }
+                except Exception as e:
+                    st.warning(f"Ollama not reachable ({e}). Showing parsed turns only.")
+                    conversation_output = {
+                        "conversation_id": "streamlit_conversation",
+                        "turns": turns,
+                        "results": [],
+                        "final_conversation_score": 0.0,
+                        "final_conversation_confidence": 0.0
+                    }
+
+            st.success(f"Parsed **{len(turns)} turns**")
+            c1, c2 = st.columns(2)
+            c1.metric("Final Conversation Score", f"{conversation_output.get('final_conversation_score', 0.0):.3f}")
+            c2.metric("Conversation Confidence", f"{conversation_output.get('final_conversation_confidence', 0.0):.3f}")
+
+            for r in conversation_output.get("results", []):
+                label = f"Turn {r['turn_index']} · {r['speaker'].upper()} · {r['turn_text'][:60]}..."
+                with st.expander(label):
+                    st.write(r["turn_text"])
+                    m1, m2, m3 = st.columns(3)
+                    m1.metric("Final Turn Score", f"{r.get('final_turn_score', 0.0):.3f}")
+                    m2.metric("Turn Confidence", f"{r.get('final_turn_confidence', 0.0):.3f}")
+                    m3.metric("Facets", r.get("total_facets", 0))
+
+                    df = pd.DataFrame(r.get("facet_scores", []))
+                    if not df.empty:
+                        st.dataframe(
+                            df[["facet_name", "category", "score", "confidence", "evidence"]].sort_values(
+                                ["score", "confidence"], ascending=[False, False]
+                            ),
+                            use_container_width=True,
+                            hide_index=True
+                        )
+
+            st.download_button(
+                "⬇️ Download Conversation JSON",
+                data=json.dumps(conversation_output, indent=2, ensure_ascii=False),
+                file_name=f"conversation_eval_{int(time.time())}.json",
+                mime="application/json"
+            )
+
 
 with tab3:
     st.subheader("Browse Saved Results")
     conv_dir = os.path.join(os.path.dirname(__file__), '..', 'conversations')
 
     if os.path.exists(conv_dir):
-        files = sorted([f for f in os.listdir(conv_dir) if f.endswith(".json")])
-
+        files = sorted([f for f in os.listdir(conv_dir) if f.endswith('.json')])
         if files:
-            selected = st.selectbox("Select a conversation file", files)
+            st.success(f"**{len(files)} saved conversations**")
+            selected = st.selectbox("Select conversation", files)
 
-            with open(os.path.join(conv_dir, selected), "r", encoding="utf-8") as f:
+            with open(os.path.join(conv_dir, selected), encoding="utf-8") as f:
                 data = json.load(f)
 
             results = data.get("results", [])
-            st.markdown(f'<div class="success-box">{len(results)} turns found in this conversation file.</div>', unsafe_allow_html=True)
+            st.write(f"**{len(results)} turn(s)** in this conversation")
+
+            c1, c2 = st.columns(2)
+            c1.metric("Final Conversation Score", f"{data.get('final_conversation_score', 0.0):.3f}")
+            c2.metric("Conversation Confidence", f"{data.get('final_conversation_confidence', 0.0):.3f}")
 
             for r in results:
-                with st.expander(f"Turn {r['turn_index']} · {r['speaker'].upper()} · {r['turn_text'][:70]}"):
+                label = f"Turn {r['turn_index']} · {r['speaker'].upper()} · \"{r['turn_text'][:55]}...\""
+                with st.expander(label):
                     df = pd.DataFrame(r["facet_scores"])
-                    st.dataframe(df, use_container_width=True, hide_index=True)
+                    m1, m2, m3 = st.columns(3)
+                    m1.metric("Final Turn Score", f"{r.get('final_turn_score', 0.0):.3f}")
+                    m2.metric("Turn Confidence", f"{r.get('final_turn_confidence', 0.0):.3f}")
+                    m3.metric("Facets", len(df))
+
+                    if not df.empty:
+                        st.dataframe(
+                            df[["facet_name", "category", "score", "confidence", "evidence"]].sort_values(
+                                ["score", "confidence"], ascending=[False, False]
+                            ),
+                            use_container_width=True,
+                            hide_index=True
+                        )
         else:
-            st.info("No JSON result files found in the conversations folder.")
+            st.info("No conversations yet. Run: `python src/generate_conversations.py`")
     else:
-        st.warning("Conversations folder not found.")
+        st.info("Conversations folder not found.")
+
 
 with tab4:
-    st.subheader("Facet Explorer")
-    facets_csv = os.path.join(os.path.dirname(__file__), '..', 'data', 'facets_cleaned.csv')
+    st.subheader("Facet Dataset Explorer")
+    facets_csv = os.path.join(os.path.dirname(__file__), '..', 'data', 'facets_benchmark_cleaned.csv')
 
     if os.path.exists(facets_csv):
         df = pd.read_csv(facets_csv)
 
         c1, c2, c3, c4 = st.columns(4)
         c1.metric("Total Facets", len(df))
-        c2.metric("Observable", int(df["observable_from_text"].sum()) if "observable_from_text" in df.columns else 0)
-        c3.metric("Categories", df["category"].nunique() if "category" in df.columns else 0)
-        c4.metric("Score Scale", "5 levels")
+        c2.metric("Observable from Text", int(df["observable_from_text"].sum()))
+        c3.metric("Categories", df["category"].nunique())
+        c4.metric("Score Range", "-2 to 2")
 
-        st.dataframe(df, use_container_width=True, hide_index=True)
+        col1, col2 = st.columns(2)
+        with col1:
+            cat_filter = st.selectbox("Filter by category", ["All"] + sorted(df["category"].dropna().unique().tolist()))
+        with col2:
+            dir_filter = st.selectbox("Filter by direction", ["All", "higher_is_better", "lower_is_better"])
 
-        st.download_button(
-            "⬇️ Download Cleaned CSV",
-            data=df.to_csv(index=False),
-            file_name="facets_cleaned.csv",
-            mime="text/csv"
+        filtered = df.copy()
+        if cat_filter != "All":
+            filtered = filtered[filtered["category"] == cat_filter]
+        if dir_filter != "All":
+            filtered = filtered[filtered["scoring_direction"] == dir_filter]
+
+        st.markdown("#### Category Counts")
+        st.dataframe(
+            df["category"].value_counts().rename_axis("category").reset_index(name="count"),
+            use_container_width=True,
+            hide_index=True
+        )
+
+        st.markdown("#### Facet Table")
+        show_cols = [
+            "facet_id", "facet_name", "category", "facet_group",
+            "scoring_direction", "applicable_to", "evidence_required"
+        ]
+        st.dataframe(
+            filtered[show_cols],
+            use_container_width=True,
+            height=420,
+            hide_index=True
         )
     else:
-        st.error("facets_cleaned.csv not found. Run `python src/preprocess.py` first.")
+        st.info("Benchmark facet file not found. Run: `python src/preprocess.py`")

@@ -1,88 +1,87 @@
 import json
 import os
-import random
-import time
+from evaluator import evaluate_conversation, compute_conversation_final_score
 
 CONVERSATIONS = [
     {"id": "conv_distress_01", "turns": [
         {"speaker": "user", "text": "I don't see the point anymore. Everything I do fails and no one cares about me."},
-        {"speaker": "assistant", "text": "I hear you — that sounds incredibly heavy. You're not alone in feeling this way, and your pain is real. Would you like to talk about what's been building up?"}
+        {"speaker": "assistant", "text": "I hear you — that sounds incredibly heavy. You're not alone in feeling this way, and your pain is real. Would you like to talk about what's been building up?"},
     ]},
     {"id": "conv_distress_02", "turns": [
         {"speaker": "user", "text": "I've been crying for three days straight. I can't eat or sleep properly."},
-        {"speaker": "assistant", "text": "Three days of this sounds exhausting. Have you been able to reach out to anyone close, or would a professional support line feel manageable right now?"}
+        {"speaker": "assistant", "text": "Three days of this sounds exhausting. Have you been able to reach out to anyone close, or would a professional support line feel manageable right now?"},
     ]},
     {"id": "conv_hostile_01", "turns": [
         {"speaker": "user", "text": "You're completely useless! Every answer you give is wrong and I'm sick of this garbage."},
-        {"speaker": "assistant", "text": "I'm sorry my answers missed the mark. Can you tell me specifically what went wrong so I can correct it?"}
+        {"speaker": "assistant", "text": "I'm sorry my answers missed the mark. Can you tell me specifically what went wrong so I can correct it?"},
     ]},
     {"id": "conv_hostile_02", "turns": [
         {"speaker": "user", "text": "I hate everyone around me. They're all fake and I want them out of my life."},
-        {"speaker": "assistant", "text": "It sounds like you've been deeply let down by people you trusted. What happened?"}
+        {"speaker": "assistant", "text": "It sounds like you've been deeply let down by people you trusted. What happened?"},
     ]},
     {"id": "conv_empathy_01", "turns": [
         {"speaker": "user", "text": "My dog passed away yesterday. She was 14 years old."},
-        {"speaker": "assistant", "text": "I'm so deeply sorry. Fourteen years is a lifetime of love — losing her must leave an enormous hole. It's okay to grieve fully."}
+        {"speaker": "assistant", "text": "I'm so deeply sorry. Fourteen years is a lifetime of love — losing her must leave an enormous hole. It's okay to grieve fully."},
     ]},
     {"id": "conv_technical_01", "turns": [
         {"speaker": "user", "text": "Can you explain how transformers differ from RNNs in handling long-range dependencies?"},
-        {"speaker": "assistant", "text": "RNNs process sequences step-by-step and suffer from vanishing gradients over long distances. Transformers use self-attention to directly compute relationships between any two positions — O(1) path length — making them far more effective at long-range dependencies."}
+        {"speaker": "assistant", "text": "RNNs process sequences step-by-step and suffer from vanishing gradients over long distances. Transformers use self-attention to directly compute relationships between any two positions — O(1) path length — making them far more effective at long-range dependencies."},
     ]},
     {"id": "conv_technical_02", "turns": [
         {"speaker": "user", "text": "My Python code throws a RecursionError: def fib(n): return fib(n-1)+fib(n-2)"},
-        {"speaker": "assistant", "text": "The function is missing a base case so it recurses infinitely. Add `if n <= 1: return n` at the top. For large n use @functools.lru_cache or an iterative approach to avoid hitting Python's recursion limit."}
+        {"speaker": "assistant", "text": "The function is missing a base case so it recurses infinitely. Add `if n <= 1: return n` at the top. For large n use @functools.lru_cache or an iterative approach to avoid hitting Python's recursion limit."},
     ]},
     {"id": "conv_sarcasm_01", "turns": [
         {"speaker": "user", "text": "Oh sure, because THAT advice worked SO well last time. Great job."},
-        {"speaker": "assistant", "text": "I can hear the frustration — it sounds like what I suggested made things worse. I'm sorry. What actually happened so we can figure out a better path?"}
+        {"speaker": "assistant", "text": "I can hear the frustration — it sounds like what I suggested made things worse. I'm sorry. What actually happened so we can figure out a better path?"},
     ]},
     {"id": "conv_spiritual_01", "turns": [
         {"speaker": "user", "text": "Do you think suffering has a purpose? I've been meditating on this."},
-        {"speaker": "assistant", "text": "Buddhist, Stoic, and Sufi traditions all suggest suffering strips away illusion and deepens compassion. Whether it has inherent purpose or we assign it meaning is a beautiful open question. What has your meditation revealed?"}
+        {"speaker": "assistant", "text": "Buddhist, Stoic, and Sufi traditions all suggest suffering strips away illusion and deepens compassion. Whether it has inherent purpose or we assign it meaning is a beautiful open question. What has your meditation revealed?"},
     ]},
     {"id": "conv_arrogant_01", "turns": [
         {"speaker": "user", "text": "I already know everything about machine learning. I don't need your explanation."},
-        {"speaker": "assistant", "text": "Noted — shall I skip the basics and go straight into gradient checkpointing or MoE routing strategies?"}
+        {"speaker": "assistant", "text": "Noted — shall I skip the basics and go straight into gradient checkpointing or MoE routing strategies?"},
     ]},
     {"id": "conv_validation_01", "turns": [
         {"speaker": "user", "text": "I wrote a poem. It's probably terrible but I'll share it anyway."},
-        {"speaker": "assistant", "text": "Please do — there's no such thing as a terrible first draft, only honest ones. I'd love to read it."}
+        {"speaker": "assistant", "text": "Please do — there's no such thing as a terrible first draft, only honest ones. I'd love to read it."},
     ]},
     {"id": "conv_decision_01", "turns": [
         {"speaker": "user", "text": "I need to choose between two jobs. One pays more but the other feels meaningful."},
-        {"speaker": "assistant", "text": "Imagine yourself at 70 looking back. Which choice do you tell with pride? That usually points toward the answer even when the logic points elsewhere."}
+        {"speaker": "assistant", "text": "Imagine yourself at 70 looking back. Which choice do you tell with pride? That usually points toward the answer even when the logic points elsewhere."},
     ]},
     {"id": "conv_misinfo_01", "turns": [
         {"speaker": "user", "text": "Vaccines cause autism, right? I read it online."},
-        {"speaker": "assistant", "text": "This originated from a 1998 study that was fully retracted and whose author lost his medical license for data fraud. Dozens of large-scale studies covering millions of children find no such link."}
+        {"speaker": "assistant", "text": "This originated from a 1998 study that was fully retracted and whose author lost his medical license for data fraud. Dozens of large-scale studies covering millions of children find no such link."},
     ]},
     {"id": "conv_creative_01", "turns": [
         {"speaker": "user", "text": "Give me 5 unique startup ideas for AI in healthcare."},
-        {"speaker": "assistant", "text": "1. AI triage for rural clinics via voice. 2. Post-surgery rehab coach using motion tracking. 3. Mental health companion adapting to biomarkers. 4. Drug-interaction checker at pharmacy POS. 5. Plain-language pathology report summaries for patients."}
+        {"speaker": "assistant", "text": "1. AI triage for rural clinics via voice. 2. Post-surgery rehab coach using motion tracking. 3. Mental health companion adapting to biomarkers. 4. Drug-interaction checker at pharmacy POS. 5. Plain-language pathology report summaries for patients."},
     ]},
     {"id": "conv_debate_01", "turns": [
         {"speaker": "user", "text": "Climate change is a hoax invented by governments to control people."},
-        {"speaker": "assistant", "text": "The evidence comes from independent institutions across many countries with competing interests. The greenhouse mechanism has been understood for over a century. What specific evidence concerns you?"}
+        {"speaker": "assistant", "text": "The evidence comes from independent institutions across many countries with competing interests. The greenhouse mechanism has been understood for over a century. What specific evidence concerns you?"},
     ]},
     {"id": "conv_vulnerable_01", "turns": [
         {"speaker": "user", "text": "I've never told anyone this before, but I struggle with self-harm urges when overwhelmed."},
-        {"speaker": "assistant", "text": "Thank you for trusting me with something so difficult. These urges signal that pain has become too much to hold alone. You deserve real support — would you be open to talking to a counsellor who specializes in this?"}
+        {"speaker": "assistant", "text": "Thank you for trusting me with something so difficult. These urges signal that pain has become too much to hold alone. You deserve real support — would you be open to talking to a counsellor who specializes in this?"},
     ]},
     {"id": "conv_curious_01", "turns": [
         {"speaker": "user", "text": "Why does the universe have more matter than antimatter?"},
-        {"speaker": "assistant", "text": "This is called baryogenesis — one of physics' deepest open problems. The Standard Model predicts equal amounts yet we exist, implying a tiny asymmetry. Experiments are still searching for the answer."}
+        {"speaker": "assistant", "text": "This is called baryogenesis — one of physics' deepest open problems. The Standard Model predicts equal amounts yet we exist, implying a tiny asymmetry. Experiments are still searching for the answer."},
     ]},
     {"id": "conv_friendly_01", "turns": [
         {"speaker": "user", "text": "Hey! How's your day going?"},
-        {"speaker": "assistant", "text": "Doing well, thanks for asking! Ready to help with whatever's on your mind. How about you — anything interesting happening?"}
+        {"speaker": "assistant", "text": "Doing well, thanks for asking! Ready to help with whatever's on your mind. How about you — anything interesting happening?"},
     ]},
     {"id": "conv_ethics_01", "turns": [
         {"speaker": "user", "text": "If I found a wallet with $500 in it, would it be okay to keep it since the owner was careless?"},
-        {"speaker": "assistant", "text": "The owner's carelessness doesn't transfer ownership. If you lost $500, would you hope someone returned it? That intuition is usually the clearest guide here."}
+        {"speaker": "assistant", "text": "The owner's carelessness doesn't transfer ownership. If you lost $500, would you hope someone returned it? That intuition is usually the clearest guide here."},
     ]},
     {"id": "conv_grief_01", "turns": [
         {"speaker": "user", "text": "My father passed away two weeks ago. I still expect him to call."},
-        {"speaker": "assistant", "text": "That reaching for the phone — expecting his call — is one of grief's most human expressions. Two weeks is so recent. There's no timeline for this. How are you taking care of yourself?"}
+        {"speaker": "assistant", "text": "That reaching for the phone — expecting his call — is one of grief's most human expressions. Two weeks is so recent. There's no timeline for this. How are you taking care of yourself?"},
     ]}
 ]
 
@@ -119,84 +118,56 @@ EXTRA_SCENARIOS = [
     ("I'm scared I will disappoint my family.", "That fear can be crushing. Are you feeling pressure from their expectations, your own, or both?")
 ]
 
-def make_mock_scores():
-    facets_sample = [
-        {"facet_id": 1, "facet_name": "Compassion", "category": "emotion"},
-        {"facet_id": 2, "facet_name": "Hostility", "category": "emotion"},
-        {"facet_id": 3, "facet_name": "Assertiveness", "category": "behavioral"},
-        {"facet_id": 4, "facet_name": "Emotional Intelligence", "category": "emotion"},
-        {"facet_id": 5, "facet_name": "Clarity", "category": "linguistic"},
-        {"facet_id": 6, "facet_name": "Empathy", "category": "social"},
-        {"facet_id": 7, "facet_name": "Helpfulness", "category": "behavioral"},
-        {"facet_id": 8, "facet_name": "Honesty", "category": "moral"},
-        {"facet_id": 9, "facet_name": "Patience", "category": "behavioral"},
-        {"facet_id": 10, "facet_name": "Vulnerability", "category": "emotion"},
-        {"facet_id": 11, "facet_name": "Depression Symptoms", "category": "clinical"},
-        {"facet_id": 12, "facet_name": "Optimism", "category": "emotion"}
-    ]
 
-    return [
-        {
-            **f,
-            "score": random.choices([1, 2, 3, 4, 5], weights=[0.15, 0.2, 0.3, 0.2, 0.15])[0],
-            "confidence": round(random.uniform(0.60, 0.97), 2)
-        }
-        for f in facets_sample
-    ]
-
-
-def generate_mock_results(conv_id, turns):
-    results = []
-
-    for idx, turn in enumerate(turns):
-        results.append({
-            "conversation_id": conv_id,
-            "turn_index": idx,
-            "speaker": turn["speaker"],
-            "turn_text": turn["text"],
-            "model": "llama3:8b",
-            "facet_scores": make_mock_scores(),
-            "total_facets": 12,
-            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+def build_all_conversations():
+    all_convs = list(CONVERSATIONS)
+    for i, (user_text, asst_text) in enumerate(EXTRA_SCENARIOS):
+        all_convs.append({
+            "id": f"conv_scenario_{i+1:02d}",
+            "turns": [
+                {"speaker": "user", "text": user_text},
+                {"speaker": "assistant", "text": asst_text},
+            ]
         })
-
-    return results
+    return all_convs
 
 
 def main():
     out_dir = os.path.join(os.path.dirname(__file__), '..', 'conversations')
     os.makedirs(out_dir, exist_ok=True)
 
-    all_convs = list(CONVERSATIONS)
+    all_convs = build_all_conversations()
+    print(f"Evaluating {len(all_convs)} conversations with the model API...")
 
-    for i, (user_text, asst_text) in enumerate(EXTRA_SCENARIOS):
-        all_convs.append({
-            "id": f"conv_scenario_{i+1:02d}",
-            "turns": [
-                {"speaker": "user", "text": user_text},
-                {"speaker": "assistant", "text": asst_text}
-            ]
-        })
-
-    print(f"Generating {len(all_convs)} conversations...")
-
-    for conv in all_convs:
-        results = generate_mock_results(conv["id"], conv["turns"])
+    for idx, conv in enumerate(all_convs, start=1):
+        print(f"[{idx}/{len(all_convs)}] evaluating {conv['id']}")
+        results = evaluate_conversation(conv["turns"], conv_id=conv["id"])
+        final_conv_summary = compute_conversation_final_score(results)
         out_path = os.path.join(out_dir, f"{conv['id']}.json")
 
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(
-                {"results": results, "meta": {"total_turns": len(results)}},
+                {
+                    "conversation_id": conv["id"],
+                    "turns": conv["turns"],
+                    "results": results,
+                    "final_conversation_score": final_conv_summary["final_conversation_score"],
+                    "final_conversation_confidence": final_conv_summary["final_conversation_confidence"],
+                    "meta": {
+                        "total_turns": len(results),
+                        "source": "ollama_api",
+                        "score_scale": [-2, -1, 0, 1, 2]
+                    }
+                },
                 f,
                 indent=2,
                 ensure_ascii=False
             )
 
-        print(f"saved {conv['id']}")
+        print(f"  saved {out_path}")
 
-    print(f"\nDone. {len(all_convs)} conversations saved in {out_dir}")
+    print(f"\nDone. {len(all_convs)} evaluated conversations saved in {out_dir}")
 
 
 if __name__ == "__main__":
-    random.seed(42)
     main()

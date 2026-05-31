@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ahoum-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+  app:
+    build: .
+    container_name: ahoum-app
+    ports:
+      - "8501:8501"
+    environment:
+      - OLLAMA_URL=http://ollama:11434/api/chat
+      - MODEL_NAME=qwen2.5:1.5b
+      - BATCH_SIZE=25
+      - MAX_RETRIES=3
+      - RETRY_DELAY=2.0
+    depends_on:
+      - ollama
+    volumes:
+      - ./data:/app/data
+      - ./conversations:/app/conversations
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
