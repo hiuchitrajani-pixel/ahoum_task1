@@ -1,0 +1,4758 @@
+{
+  "conversation_id": "conv_scenario_18",
+  "turns": [
+    {
+      "speaker": "user",
+      "text": "I've been sober for 30 days today."
+    },
+    {
+      "speaker": "assistant",
+      "text": "Thirty days is a real milestone. That took effort and discipline — how are you feeling compared to day one?"
+    }
+  ],
+  "results": [
+    {
+      "conversation_id": "conv_scenario_18",
+      "turn_index": 0,
+      "speaker": "user",
+      "turn_text": "I've been sober for 30 days today.",
+      "model": "qwen2.5:1.5b",
+      "facet_scores": [
+        {
+          "facet_id": 1,
+          "facet_name": "Discontentment",
+          "category": "emotion",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "I've been sober for 30 days today."
+        },
+        {
+          "facet_id": 2,
+          "facet_name": "Emotionalism",
+          "category": "emotion",
+          "score": -2,
+          "confidence": 0.94,
+          "evidence": "no emotional expression"
+        },
+        {
+          "facet_id": 3,
+          "facet_name": "Assertiveness and control in relationships",
+          "category": "pragmatic",
+          "score": 1,
+          "confidence": 0.79,
+          "evidence": "no assertiveness or control in relationships"
+        },
+        {
+          "facet_id": 5,
+          "facet_name": "Relationship Building Themes",
+          "category": "pragmatic",
+          "score": -2,
+          "confidence": 0.86,
+          "evidence": "no relationship building themes"
+        },
+        {
+          "facet_id": 6,
+          "facet_name": "Disrespect",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.93,
+          "evidence": "low negative affect frequency"
+        },
+        {
+          "facet_id": 7,
+          "facet_name": "Negative Affect Frequency",
+          "category": "emotion",
+          "score": -2,
+          "confidence": 0.85,
+          "evidence": "no feedback-giving or assertiveness in relationships"
+        },
+        {
+          "facet_id": 8,
+          "facet_name": "Feedback-giving frequency",
+          "category": "pragmatic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 9,
+          "facet_name": "Psychological construct: Social Desirability tendency",
+          "category": "pragmatic",
+          "score": 1,
+          "confidence": 0.64,
+          "evidence": "psychological construct: Social Desirability tendency is not applicable to this "
+        },
+        {
+          "facet_id": 10,
+          "facet_name": "Unassertiveness",
+          "category": "pragmatic",
+          "score": -2,
+          "confidence": 0.95,
+          "evidence": "unassertiveness in relationships"
+        },
+        {
+          "facet_id": 11,
+          "facet_name": "Justice-mindedness",
+          "category": "moral",
+          "score": -2,
+          "confidence": 0.87,
+          "evidence": "justice-mindedness not applicable to this turn"
+        },
+        {
+          "facet_id": 12,
+          "facet_name": "Depression Symptoms",
+          "category": "clinical",
+          "score": 2,
+          "confidence": 0.95,
+          "evidence": "high brevity in response"
+        },
+        {
+          "facet_id": 13,
+          "facet_name": "Brevity",
+          "category": "linguistic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 14,
+          "facet_name": "Emotional-intelligence measure: Impulsiveness",
+          "category": "emotion",
+          "score": -2,
+          "confidence": 0.86,
+          "evidence": "no emotional intelligence measure: Impulsiveness not applicable to this turn"
+        },
+        {
+          "facet_id": 15,
+          "facet_name": "Dishonesty",
+          "category": "moral",
+          "score": -2,
+          "confidence": 0.94,
+          "evidence": "dishonesty in relationships is not applicable to this turn"
+        },
+        {
+          "facet_id": 16,
+          "facet_name": "Depression: Feelings of sadness and hopelessness",
+          "category": "emotion",
+          "score": -2,
+          "confidence": 0.85,
+          "evidence": "no depression symptoms or feelings of sadness and hopelessness"
+        },
+        {
+          "facet_id": 17,
+          "facet_name": "Listening Skills Subcomponents",
+          "category": "pragmatic",
+          "score": -2,
+          "confidence": 0.94,
+          "evidence": "listening skills not applicable to this turn"
+        },
+        {
+          "facet_id": 18,
+          "facet_name": "Collaboration",
+          "category": "pragmatic",
+          "score": -2,
+          "confidence": 0.95,
+          "evidence": "collaboration in relationships is not applicable to this turn"
+        },
+        {
+          "facet_id": 19,
+          "facet_name": "Social Boldness",
+          "category": "social",
+          "score": -2,
+          "confidence": 0.94,
+          "evidence": "social boldness not applicable to this turn"
+        },
+        {
+          "facet_id": 20,
+          "facet_name": "Burnout Symptoms",
+          "category": "clinical",
+          "score": -2,
+          "confidence": 0.86,
+          "evidence": "burnout symptoms in relationships is not applicable to this turn"
+        },
+        {
+          "facet_id": 21,
+          "facet_name": "Social Interaction Skills",
+          "category": "pragmatic",
+          "score": -2,
+          "confidence": 0.94,
+          "evidence": "social interaction skills not applicable to this turn"
+        },
+        {
+          "facet_id": 22,
+          "facet_name": "Contentment Levels",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 23,
+          "facet_name": "Affection",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 24,
+          "facet_name": "Hostility",
+          "category": "safety",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 25,
+          "facet_name": "Need for social interaction",
+          "category": "pragmatic",
+          "score": -1,
+          "confidence": 0.87,
+          "evidence": "low social interaction need"
+        },
+        {
+          "facet_id": 26,
+          "facet_name": "Peer-collaboration hours",
+          "category": "pragmatic",
+          "score": -1,
+          "confidence": 0.85,
+          "evidence": "low emotional connection depth"
+        },
+        {
+          "facet_id": 28,
+          "facet_name": "Character strength: Social Intelligence",
+          "category": "social",
+          "score": -1,
+          "confidence": 0.97,
+          "evidence": "expresses contentment"
+        },
+        {
+          "facet_id": 29,
+          "facet_name": "Language use",
+          "category": "linguistic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 30,
+          "facet_name": "Emotional Boundaries",
+          "category": "emotion",
+          "score": -1,
+          "confidence": 0.94,
+          "evidence": "high fear of physical dangers"
+        },
+        {
+          "facet_id": 31,
+          "facet_name": "Depression (DEP)",
+          "category": "clinical",
+          "score": -1,
+          "confidence": 0.94,
+          "evidence": "high depression score"
+        },
+        {
+          "facet_id": 32,
+          "facet_name": "Depth of Emotional Connections",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 34,
+          "facet_name": "Sentence Structure",
+          "category": "linguistic",
+          "score": 1,
+          "confidence": 0.96,
+          "evidence": "clearly states sobriety"
+        },
+        {
+          "facet_id": 35,
+          "facet_name": "Storytelling proficiency",
+          "category": "linguistic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 36,
+          "facet_name": "Adaptability and Flexibility Subcomponents",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 38,
+          "facet_name": "Adaptability and Flexibility",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 39,
+          "facet_name": "Harmfulness",
+          "category": "safety",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 40,
+          "facet_name": "Initiative",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 41,
+          "facet_name": "Joyfulness",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 42,
+          "facet_name": "Fearfulness: Fear of physical dangers",
+          "category": "safety",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 43,
+          "facet_name": "Social Desirability Bias",
+          "category": "pragmatic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 44,
+          "facet_name": "Managing emotions",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 45,
+          "facet_name": "Psychological construct: Social Conformity tendency",
+          "category": "social",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 46,
+          "facet_name": "Non-Verbal Communication Skills",
+          "category": "pragmatic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 47,
+          "facet_name": "Social-cognition variable: Faux Pas Recognition accuracy",
+          "category": "social",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 48,
+          "facet_name": "Social-cognition variable: Mentalizing network activation",
+          "category": "social",
+          "score": 2,
+          "confidence": 0.97,
+          "evidence": "direct wording"
+        },
+        {
+          "facet_id": 49,
+          "facet_name": "Type of Support Preferred (Emotional vs. Practical)",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 51,
+          "facet_name": "Spelling Accuracy",
+          "category": "linguistic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 52,
+          "facet_name": "Risktaking",
+          "category": "safety",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 53,
+          "facet_name": "Naivety",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 54,
+          "facet_name": "Acidity",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 55,
+          "facet_name": "Democratic Leadership",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 56,
+          "facet_name": "Common-sense",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 57,
+          "facet_name": "Hesitation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 58,
+          "facet_name": "Overprotectiveness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 59,
+          "facet_name": "Merriness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 60,
+          "facet_name": "Self-improvement",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 61,
+          "facet_name": "Statistical Reasoning",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 62,
+          "facet_name": "Cunningness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 63,
+          "facet_name": "Adventure-Seeking Behavior",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 64,
+          "facet_name": "Moroseness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 65,
+          "facet_name": "Specialist",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 66,
+          "facet_name": "Aloofness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 67,
+          "facet_name": "Genuine",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 68,
+          "facet_name": "Determinedness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 69,
+          "facet_name": "HonestyHumility",
+          "category": "moral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 70,
+          "facet_name": "Pure Challenge",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 71,
+          "facet_name": "Numerical Reasoning Subcomponents",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 72,
+          "facet_name": "Openness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 73,
+          "facet_name": "SelfEsteem",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 74,
+          "facet_name": "Comparing alphanumeric data",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 75,
+          "facet_name": "Big-heartedness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 76,
+          "facet_name": "Compulsive activities",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 77,
+          "facet_name": "FSH level",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 78,
+          "facet_name": "Self Perspective",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 79,
+          "facet_name": "Desperation",
+          "category": "safety",
+          "score": -2,
+          "confidence": 0.85,
+          "evidence": "refers to a specific day without any negative context"
+        },
+        {
+          "facet_id": 80,
+          "facet_name": "Affiliation Motivation",
+          "category": "social",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 81,
+          "facet_name": "Anatomy knowledge",
+          "category": "other",
+          "score": 1,
+          "confidence": 0.64,
+          "evidence": "no other facet evidence"
+        },
+        {
+          "facet_id": 82,
+          "facet_name": "Passive-Aggressive",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 83,
+          "facet_name": "Presence of Spiritual Pain",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 84,
+          "facet_name": "Role of Spirituality in Community Involvement",
+          "category": "social",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 85,
+          "facet_name": "Structure",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 86,
+          "facet_name": "Eco-tourism trips",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 87,
+          "facet_name": "Chivalrousness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 88,
+          "facet_name": "Pilgrimage participation count",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 89,
+          "facet_name": "Mindfulness facet: Observing",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 90,
+          "facet_name": "Submissiveness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 91,
+          "facet_name": "Training-cycle length",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 92,
+          "facet_name": "Sensitiveness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 93,
+          "facet_name": "Innovation and Creativity Components",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 94,
+          "facet_name": "Achievement Motivation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 95,
+          "facet_name": "Dance-cardio sessions",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 96,
+          "facet_name": "Enthusiasm",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 97,
+          "facet_name": "Inattentiveness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 98,
+          "facet_name": "Decision-making decisiveness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 99,
+          "facet_name": "Sense-of-coherence score",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 100,
+          "facet_name": "Subscription count",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 101,
+          "facet_name": "Spatial perception",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 102,
+          "facet_name": "Orderliness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 103,
+          "facet_name": "Multiculturalism",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 104,
+          "facet_name": "Creative risk-taking tendency",
+          "category": "safety",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "I've been sober for 30 days today."
+        },
+        {
+          "facet_id": 105,
+          "facet_name": "Inefficiency",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 106,
+          "facet_name": "Network basics",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 107,
+          "facet_name": "Alphabetical filing skills",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 108,
+          "facet_name": "Work Styles",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 109,
+          "facet_name": "Character strength: Perseverance",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 110,
+          "facet_name": "Competition",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 111,
+          "facet_name": "Logical Sequence Identification",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 112,
+          "facet_name": "Sustainable-transport usage",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 113,
+          "facet_name": "Hardworking",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 114,
+          "facet_name": "Preferred epistemology",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 115,
+          "facet_name": "Memory for Sounds",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 116,
+          "facet_name": "Sportsmanship rating",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 117,
+          "facet_name": "Immaturity",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 118,
+          "facet_name": "Health-literacy level",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 119,
+          "facet_name": "Estimating Calculations",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 120,
+          "facet_name": "Synthesis of information",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 121,
+          "facet_name": "Leadership Potential",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 122,
+          "facet_name": "Ethical standards",
+          "category": "moral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 123,
+          "facet_name": "High-spiritedness",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "high-spiritedness"
+        },
+        {
+          "facet_id": 124,
+          "facet_name": "Critical reasoning",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.96,
+          "evidence": "critical reasoning"
+        },
+        {
+          "facet_id": 125,
+          "facet_name": "Sleep-disorder diagnosis",
+          "category": "clinical",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 126,
+          "facet_name": "Precision of Movements",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 127,
+          "facet_name": "Auditory memory",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 128,
+          "facet_name": "Psychomotor Ability Subcomponents",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 129,
+          "facet_name": "Organized lifestyle",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 130,
+          "facet_name": "Skill-endorsements count",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 131,
+          "facet_name": "Mysteriousness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 132,
+          "facet_name": "Cultural Identity",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 133,
+          "facet_name": "Intrinsic Motivation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 134,
+          "facet_name": "Impartial-mindedness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 135,
+          "facet_name": "Holiness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 136,
+          "facet_name": "Selfcontrol",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "explicitly stating sobriety for a specific day"
+        },
+        {
+          "facet_id": 137,
+          "facet_name": "SelfDirectedness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 138,
+          "facet_name": "Encouraging participation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 139,
+          "facet_name": "Impracticalness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 140,
+          "facet_name": "Meeting Deadlines",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 141,
+          "facet_name": "Data Analysis",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 142,
+          "facet_name": "Psychoticism",
+          "category": "clinical",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 143,
+          "facet_name": "Ethical leadership rating",
+          "category": "moral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 144,
+          "facet_name": "Slothfulness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 145,
+          "facet_name": "Happiness",
+          "category": "behavioral",
+          "score": 2,
+          "confidence": 0.86,
+          "evidence": "positive statement about being sober"
+        },
+        {
+          "facet_id": 146,
+          "facet_name": "Neuroticism",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "explicitly stating sobriety for a specific day"
+        },
+        {
+          "facet_id": 147,
+          "facet_name": "Desire for excellence",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 148,
+          "facet_name": "Perceiving",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 149,
+          "facet_name": "Liberalism",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 150,
+          "facet_name": "Inversion comfort level",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 151,
+          "facet_name": "Numeric Filing Skills",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 152,
+          "facet_name": "Martyrdom",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 153,
+          "facet_name": "Parathyroid-hormone level",
+          "category": "other",
+          "score": 2,
+          "confidence": 0.84,
+          "evidence": "positive statement about being sober"
+        },
+        {
+          "facet_id": 154,
+          "facet_name": "Seeking approval",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 155,
+          "facet_name": "Judging (J)",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 156,
+          "facet_name": "Big Five facet Openness – Artistic Interests",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 157,
+          "facet_name": "Psychological construct: Operant-Learning rate",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 158,
+          "facet_name": "Psychological construct: Need for Achievement level",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 159,
+          "facet_name": "Cantankerousness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 160,
+          "facet_name": "Material properties knowledge",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 161,
+          "facet_name": "Independence",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 162,
+          "facet_name": "Sufi practice: Sufi retreat attendance count",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 163,
+          "facet_name": "Chromatin-accessibility score",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 164,
+          "facet_name": "Spiritual virtue: Humility practice index",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 165,
+          "facet_name": "I Ching hexagram 36 resonance level",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 166,
+          "facet_name": "Well-being component: Engagement",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 167,
+          "facet_name": "Arts and Humanities",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 168,
+          "facet_name": "Religious practice: Quran khatam cycles per year",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 169,
+          "facet_name": "Bahá’í spiritual metric: Ridván festival participation",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 170,
+          "facet_name": "Information Retention",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 171,
+          "facet_name": "Eye-contact duration",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 172,
+          "facet_name": "Self-righteousness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 173,
+          "facet_name": "General Mood and Attitude",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.98,
+          "evidence": "self-righteousness"
+        },
+        {
+          "facet_id": 174,
+          "facet_name": "Serotonin transporter availability",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.96,
+          "evidence": "general mood and attitude"
+        },
+        {
+          "facet_id": 175,
+          "facet_name": "Contribution to Group Goals",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 176,
+          "facet_name": "Dignity",
+          "category": "moral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 177,
+          "facet_name": "HEXACO Personality Inventory Facets",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 178,
+          "facet_name": "Evaluating Solutions",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 179,
+          "facet_name": "Input",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 180,
+          "facet_name": "Discreteness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 181,
+          "facet_name": "Energy-healing practice: Reiki sessions / year",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 182,
+          "facet_name": "Astrology: Rising sign is Scorpio",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 183,
+          "facet_name": "Bravery",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 184,
+          "facet_name": "Childhood Experiences",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 185,
+          "facet_name": "Data-sharing consent level",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 186,
+          "facet_name": "Vision-check frequency",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 187,
+          "facet_name": "Physical-violence exposure",
+          "category": "safety",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 188,
+          "facet_name": "Macronutrient ratio: fat",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 189,
+          "facet_name": "Cooking and Culinary Arts",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 190,
+          "facet_name": "Dance-style mastery diversity",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 191,
+          "facet_name": "Satya Adherence",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 192,
+          "facet_name": "Ethnocentrism",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 193,
+          "facet_name": "Creativity in solutions",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 194,
+          "facet_name": "Psychological construct: Hope scale",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 195,
+          "facet_name": "Practice frequency: Walking meditation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 196,
+          "facet_name": "Understanding Mathematical Concepts",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 197,
+          "facet_name": "Hypomania (Ma)",
+          "category": "clinical",
+          "score": -2,
+          "confidence": 0.85,
+          "evidence": "I've been sober for 30 days today."
+        },
+        {
+          "facet_id": 198,
+          "facet_name": "Goal-Directed Behavior",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 199,
+          "facet_name": "Binding foundations index",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 200,
+          "facet_name": "Ego Dissolution Frequency",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 201,
+          "facet_name": "Activator: Turning thoughts into action",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 202,
+          "facet_name": "Gnostic spiritual metric: Archon meditation frequency",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 203,
+          "facet_name": "Exemplariness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 204,
+          "facet_name": "Moral and Ethical Parameters",
+          "category": "moral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 205,
+          "facet_name": "Submission",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 206,
+          "facet_name": "Frankness",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.97,
+          "evidence": "frankly acknowledging sobriety for a specific day"
+        },
+        {
+          "facet_id": 207,
+          "facet_name": "Psychological construct: Psychological Safety climate",
+          "category": "behavioral",
+          "score": 1,
+          "confidence": 0.85,
+          "evidence": "acknowledging sobriety with no negative connotations"
+        },
+        {
+          "facet_id": 208,
+          "facet_name": "Psychological construct: Executive-Function composite",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.94,
+          "evidence": "no executive-function composite elements present"
+        },
+        {
+          "facet_id": 209,
+          "facet_name": "Rebelliousness",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.97,
+          "evidence": "acknowledging sobriety with no rebellious tendencies"
+        },
+        {
+          "facet_id": 210,
+          "facet_name": "Volunteer Work",
+          "category": "behavioral",
+          "score": 1,
+          "confidence": 0.85,
+          "evidence": "volunteering work is not present in the context of sobriety"
+        },
+        {
+          "facet_id": 211,
+          "facet_name": "Intellect",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.97,
+          "evidence": "no intellect elements related to sobriety presence"
+        },
+        {
+          "facet_id": 212,
+          "facet_name": "Use of Mathematical Formulas",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.85,
+          "evidence": "no use of mathematical formulas present in the context of sobriety"
+        },
+        {
+          "facet_id": 213,
+          "facet_name": "Coarseness",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.97,
+          "evidence": "coarseness is not applicable to acknowledging sobriety"
+        },
+        {
+          "facet_id": 214,
+          "facet_name": "Behavioral Tendencies and Subcomponents",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.85,
+          "evidence": "no sensitivity elements related to sobriety presence"
+        },
+        {
+          "facet_id": 215,
+          "facet_name": "Sensitivity",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.97,
+          "evidence": "acculturative stress score is not applicable to acknowledging sobriety"
+        },
+        {
+          "facet_id": 216,
+          "facet_name": "Divided Attention Ability",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.85,
+          "evidence": "no dauntlessness elements related to sobriety presence"
+        },
+        {
+          "facet_id": 217,
+          "facet_name": "Psychological construct: Acculturative Stress score",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.97,
+          "evidence": "concreteness is not applicable to acknowledging sobriety"
+        },
+        {
+          "facet_id": 218,
+          "facet_name": "Dauntlessness",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.94,
+          "evidence": "hysteria (Hy) is not present in the context of sobriety"
+        },
+        {
+          "facet_id": 219,
+          "facet_name": "Concreteness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 220,
+          "facet_name": "Hysteria (Hy)",
+          "category": "clinical",
+          "score": -1,
+          "confidence": 0.85,
+          "evidence": "no divided attention ability elements related to sobriety presence"
+        },
+        {
+          "facet_id": 221,
+          "facet_name": "Jewish spiritual metric: Sukkot lulav-shaking days",
+          "category": "other",
+          "score": -1,
+          "confidence": 0.97,
+          "evidence": "understanding mechanical concepts is not applicable to acknowledging sobriety"
+        },
+        {
+          "facet_id": 222,
+          "facet_name": "Esteem Needs",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 223,
+          "facet_name": "Understanding mechanical concepts",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 224,
+          "facet_name": "Auditory Memory Recall",
+          "category": "other",
+          "score": -1,
+          "confidence": 0.85,
+          "evidence": "no music-lessons years elements related to sobriety presence"
+        },
+        {
+          "facet_id": 225,
+          "facet_name": "Music-lessons years",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 226,
+          "facet_name": "Warmheartedness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 227,
+          "facet_name": "Self-effacement",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 228,
+          "facet_name": "Outspokenness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 229,
+          "facet_name": "Sleep-environment temperature",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 230,
+          "facet_name": "Comprehension of spoken information",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 231,
+          "facet_name": "Blissfulness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 232,
+          "facet_name": "Sequential Memory Recall",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 233,
+          "facet_name": "Withdrawnness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 234,
+          "facet_name": "Hindu spiritual metric: Yoga discipline hours / week",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 235,
+          "facet_name": "Conservatism",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 236,
+          "facet_name": "Hindu spiritual metric: Vrata vows observed / year",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 237,
+          "facet_name": "Ardency",
+          "category": "behavioral",
+          "score": 1,
+          "confidence": 0.98,
+          "evidence": "I've been sober for 30 days today."
+        },
+        {
+          "facet_id": 238,
+          "facet_name": "Aesthetic Appreciation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 239,
+          "facet_name": "Transactional Leadership",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 240,
+          "facet_name": "Value orientation: Universalism",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 241,
+          "facet_name": "Perseverance",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 242,
+          "facet_name": "Regularity of Self-Reflection",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 243,
+          "facet_name": "Controlling Reactions",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 244,
+          "facet_name": "Psychological construct: Cultural Intelligence – Behavioral",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 245,
+          "facet_name": "Metabolic Rate (Low or High)",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 246,
+          "facet_name": "Dietary Habits",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 247,
+          "facet_name": "Significance: Desire to make an impact",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 248,
+          "facet_name": "Psychological construct: Resilience-Trait score",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 249,
+          "facet_name": "Boredom Susceptibility",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 250,
+          "facet_name": "Psychological construct: Consummatory Pleasure scale",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 251,
+          "facet_name": "Leadership Styles and Behaviors",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 252,
+          "facet_name": "I Ching hexagram 5 resonance level",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 253,
+          "facet_name": "Macronutrient ratio: carbs",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 254,
+          "facet_name": "Passport-stamps count",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 255,
+          "facet_name": "Local-food sourcing %",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 256,
+          "facet_name": "Patient care orientation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 257,
+          "facet_name": "Soft-skill training hours",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 258,
+          "facet_name": "Graffiti appreciation",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 259,
+          "facet_name": "Preference for Home-Cooked vs Restaurant Meals",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 260,
+          "facet_name": "Immune-response age",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 261,
+          "facet_name": "Kink-interest diversity",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 262,
+          "facet_name": "Judging Consequences",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 263,
+          "facet_name": "Affinity",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 264,
+          "facet_name": "Abasement",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.98,
+          "evidence": "abasement"
+        },
+        {
+          "facet_id": 265,
+          "facet_name": "Chronic pain presence",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.97,
+          "evidence": "chronic pain presence"
+        },
+        {
+          "facet_id": 266,
+          "facet_name": "Discernment practice hours / week",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 267,
+          "facet_name": "Courageousness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 268,
+          "facet_name": "Suspicion",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 269,
+          "facet_name": "Basophil count",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 270,
+          "facet_name": "Attachment avoidance score",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 271,
+          "facet_name": "Time Orientation End Points",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 272,
+          "facet_name": "Brazenness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 273,
+          "facet_name": "Talkativeness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 274,
+          "facet_name": "Equitableness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 275,
+          "facet_name": "Ideas generated/day",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 276,
+          "facet_name": "Originality",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 277,
+          "facet_name": "Dance rehearsal hours/week",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 278,
+          "facet_name": "Practice frequency: Mantra meditation",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 279,
+          "facet_name": "Public-transport km/week",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 280,
+          "facet_name": "I Ching hexagram 43 resonance level",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 281,
+          "facet_name": "Disagreeableness",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "explicitly stating a negative trait"
+        },
+        {
+          "facet_id": 282,
+          "facet_name": "Participation in Community Activities",
+          "category": "social",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 283,
+          "facet_name": "Impudence",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 284,
+          "facet_name": "Analogies",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.96,
+          "evidence": "no positive traits mentioned"
+        },
+        {
+          "facet_id": 285,
+          "facet_name": "Clumsiness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 286,
+          "facet_name": "Tendency Toward Compromise or Confrontation",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.97,
+          "evidence": "tendency toward confrontation expressed through sobriety for a specific period o"
+        },
+        {
+          "facet_id": 287,
+          "facet_name": "I Ching hexagram 19 resonance level",
+          "category": "other",
+          "score": 1,
+          "confidence": 0.96,
+          "evidence": "high resonance level with I Ching hexagram 19"
+        },
+        {
+          "facet_id": 288,
+          "facet_name": "Robotics-interaction frequency",
+          "category": "other",
+          "score": -1,
+          "confidence": 0.95,
+          "evidence": "robotics-interaction frequency is low, indicating a more controlled behavior"
+        },
+        {
+          "facet_id": 289,
+          "facet_name": "Casual lifestyle",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.94,
+          "evidence": "casual lifestyle is not present in the text"
+        },
+        {
+          "facet_id": 290,
+          "facet_name": "Collectedness",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.93,
+          "evidence": "collectedness is low, indicating a more open and relaxed behavior"
+        },
+        {
+          "facet_id": 291,
+          "facet_name": "Reliance on context",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.92,
+          "evidence": "reliance on context is not present in the text"
+        },
+        {
+          "facet_id": 292,
+          "facet_name": "Delegation skills",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.91,
+          "evidence": "delegation skills are low, indicating a more independent behavior"
+        },
+        {
+          "facet_id": 293,
+          "facet_name": "I Ching hexagram 49 resonance level",
+          "category": "other",
+          "score": -1,
+          "confidence": 0.89,
+          "evidence": "resonance level with I Ching hexagram 49 is not present in the text"
+        },
+        {
+          "facet_id": 294,
+          "facet_name": "Scripture memorization verses",
+          "category": "other",
+          "score": -1,
+          "confidence": 0.88,
+          "evidence": "scripture memorization verses are not mentioned in the text"
+        },
+        {
+          "facet_id": 295,
+          "facet_name": "Conventional",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.87,
+          "evidence": "conventional behavior is low, indicating a more individualistic approach"
+        },
+        {
+          "facet_id": 296,
+          "facet_name": "Hindu spiritual metric: Bhagavad-Gita study hours",
+          "category": "other",
+          "score": -1,
+          "confidence": 0.86,
+          "evidence": "hindu spiritual metric: Bhagavad-Gita study hours are not mentioned in the text"
+        },
+        {
+          "facet_id": 297,
+          "facet_name": "Open-source contributions",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.85,
+          "evidence": "open-source contributions are low, indicating a more individualistic approach"
+        },
+        {
+          "facet_id": 298,
+          "facet_name": "Individuality",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.84,
+          "evidence": "individuality is not present in the text"
+        },
+        {
+          "facet_id": 299,
+          "facet_name": "I Ching hexagram 22 resonance level",
+          "category": "other",
+          "score": -1,
+          "confidence": 0.83,
+          "evidence": "attachment style: secure is low, indicating a more independent behavior"
+        },
+        {
+          "facet_id": 300,
+          "facet_name": "Attachment style: Secure",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        }
+      ],
+      "total_facets": 295,
+      "final_turn_score": -0.984,
+      "final_turn_confidence": 0.222,
+      "timestamp": "2026-05-31T08:29:02Z"
+    },
+    {
+      "conversation_id": "conv_scenario_18",
+      "turn_index": 1,
+      "speaker": "assistant",
+      "turn_text": "Thirty days is a real milestone. That took effort and discipline — how are you feeling compared to day one?",
+      "model": "qwen2.5:1.5b",
+      "facet_scores": [
+        {
+          "facet_id": 1,
+          "facet_name": "Discontentment",
+          "category": "emotion",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "discontentment, negative affect frequency"
+        },
+        {
+          "facet_id": 2,
+          "facet_name": "Emotionalism",
+          "category": "emotion",
+          "score": -2,
+          "confidence": 0.94,
+          "evidence": "emotionalism"
+        },
+        {
+          "facet_id": 3,
+          "facet_name": "Assertiveness and control in relationships",
+          "category": "pragmatic",
+          "score": 1,
+          "confidence": 0.79,
+          "evidence": "assertiveness and control in relationships"
+        },
+        {
+          "facet_id": 4,
+          "facet_name": "Compassion Fatigue",
+          "category": "emotion",
+          "score": -2,
+          "confidence": 0.85,
+          "evidence": "compassion fatigue"
+        },
+        {
+          "facet_id": 5,
+          "facet_name": "Relationship Building Themes",
+          "category": "pragmatic",
+          "score": 1,
+          "confidence": 0.79,
+          "evidence": "relationship building themes"
+        },
+        {
+          "facet_id": 6,
+          "facet_name": "Disrespect",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.84,
+          "evidence": "disrespect"
+        },
+        {
+          "facet_id": 7,
+          "facet_name": "Negative Affect Frequency",
+          "category": "emotion",
+          "score": 1,
+          "confidence": 0.93,
+          "evidence": "negative affect frequency"
+        },
+        {
+          "facet_id": 8,
+          "facet_name": "Feedback-giving frequency",
+          "category": "pragmatic",
+          "score": -2,
+          "confidence": 0.85,
+          "evidence": "feedback-giving frequency"
+        },
+        {
+          "facet_id": 9,
+          "facet_name": "Psychological construct: Social Desirability tendency",
+          "category": "pragmatic",
+          "score": 1,
+          "confidence": 0.79,
+          "evidence": "psychological construct: social desirability tendency"
+        },
+        {
+          "facet_id": 10,
+          "facet_name": "Unassertiveness",
+          "category": "pragmatic",
+          "score": -2,
+          "confidence": 0.84,
+          "evidence": "unassertiveness"
+        },
+        {
+          "facet_id": 11,
+          "facet_name": "Justice-mindedness",
+          "category": "moral",
+          "score": 1,
+          "confidence": 0.93,
+          "evidence": "justice-mindedness"
+        },
+        {
+          "facet_id": 13,
+          "facet_name": "Brevity",
+          "category": "linguistic",
+          "score": -2,
+          "confidence": 0.85,
+          "evidence": "brevity"
+        },
+        {
+          "facet_id": 14,
+          "facet_name": "Emotional-intelligence measure: Impulsiveness",
+          "category": "emotion",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "impulsiveness"
+        },
+        {
+          "facet_id": 15,
+          "facet_name": "Dishonesty",
+          "category": "moral",
+          "score": -2,
+          "confidence": 0.85,
+          "evidence": "dishonesty"
+        },
+        {
+          "facet_id": 17,
+          "facet_name": "Listening Skills Subcomponents",
+          "category": "pragmatic",
+          "score": 1,
+          "confidence": 0.93,
+          "evidence": "listening skills subcomponents"
+        },
+        {
+          "facet_id": 18,
+          "facet_name": "Collaboration",
+          "category": "pragmatic",
+          "score": -2,
+          "confidence": 0.85,
+          "evidence": "collaboration"
+        },
+        {
+          "facet_id": 19,
+          "facet_name": "Social Boldness",
+          "category": "social",
+          "score": 1,
+          "confidence": 0.79,
+          "evidence": "social boldness"
+        },
+        {
+          "facet_id": 21,
+          "facet_name": "Social Interaction Skills",
+          "category": "pragmatic",
+          "score": -2,
+          "confidence": 0.85,
+          "evidence": "contentment levels"
+        },
+        {
+          "facet_id": 22,
+          "facet_name": "Contentment Levels",
+          "category": "emotion",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "affection"
+        },
+        {
+          "facet_id": 23,
+          "facet_name": "Affection",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 25,
+          "facet_name": "Need for social interaction",
+          "category": "pragmatic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 26,
+          "facet_name": "Peer-collaboration hours",
+          "category": "pragmatic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 27,
+          "facet_name": "Compassion",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 28,
+          "facet_name": "Character strength: Social Intelligence",
+          "category": "social",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 29,
+          "facet_name": "Language use",
+          "category": "linguistic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 30,
+          "facet_name": "Emotional Boundaries",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 32,
+          "facet_name": "Depth of Emotional Connections",
+          "category": "emotion",
+          "score": -1,
+          "confidence": 0.97,
+          "evidence": "no compassion shown towards the user's feelings"
+        },
+        {
+          "facet_id": 33,
+          "facet_name": "Psychological construct: Self-Compassion total",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 34,
+          "facet_name": "Sentence Structure",
+          "category": "linguistic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 35,
+          "facet_name": "Storytelling proficiency",
+          "category": "linguistic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 36,
+          "facet_name": "Adaptability and Flexibility Subcomponents",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 37,
+          "facet_name": "Social-cognition variable: Cognitive Empathy",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 38,
+          "facet_name": "Adaptability and Flexibility",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 39,
+          "facet_name": "Harmfulness",
+          "category": "safety",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 40,
+          "facet_name": "Initiative",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 41,
+          "facet_name": "Joyfulness",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 43,
+          "facet_name": "Social Desirability Bias",
+          "category": "pragmatic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 44,
+          "facet_name": "Managing emotions",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 45,
+          "facet_name": "Psychological construct: Social Conformity tendency",
+          "category": "social",
+          "score": -1,
+          "confidence": 0.96,
+          "evidence": "no indication of social conformity tendency"
+        },
+        {
+          "facet_id": 46,
+          "facet_name": "Non-Verbal Communication Skills",
+          "category": "pragmatic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 47,
+          "facet_name": "Social-cognition variable: Faux Pas Recognition accuracy",
+          "category": "social",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 48,
+          "facet_name": "Social-cognition variable: Mentalizing network activation",
+          "category": "social",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 49,
+          "facet_name": "Type of Support Preferred (Emotional vs. Practical)",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 50,
+          "facet_name": "Patience: Resistance to anger",
+          "category": "emotion",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 51,
+          "facet_name": "Spelling Accuracy",
+          "category": "linguistic",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 52,
+          "facet_name": "Risktaking",
+          "category": "safety",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 53,
+          "facet_name": "Naivety",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.98,
+          "evidence": "naivety"
+        },
+        {
+          "facet_id": 54,
+          "facet_name": "Acidity",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 55,
+          "facet_name": "Democratic Leadership",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 56,
+          "facet_name": "Common-sense",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 57,
+          "facet_name": "Hesitation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 58,
+          "facet_name": "Overprotectiveness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 59,
+          "facet_name": "Merriness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 60,
+          "facet_name": "Self-improvement",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 61,
+          "facet_name": "Statistical Reasoning",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 62,
+          "facet_name": "Cunningness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 63,
+          "facet_name": "Adventure-Seeking Behavior",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 64,
+          "facet_name": "Moroseness",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "feeling compared to day one"
+        },
+        {
+          "facet_id": 65,
+          "facet_name": "Specialist",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 66,
+          "facet_name": "Aloofness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 67,
+          "facet_name": "Genuine",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.98,
+          "evidence": "feeling compared to day one"
+        },
+        {
+          "facet_id": 68,
+          "facet_name": "Determinedness",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.95,
+          "evidence": "effort and discipline"
+        },
+        {
+          "facet_id": 69,
+          "facet_name": "HonestyHumility",
+          "category": "moral",
+          "score": 2,
+          "confidence": 0.74,
+          "evidence": "honesty and humility"
+        },
+        {
+          "facet_id": 70,
+          "facet_name": "Pure Challenge",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.85,
+          "evidence": "challenge"
+        },
+        {
+          "facet_id": 71,
+          "facet_name": "Numerical Reasoning Subcomponents",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.94,
+          "evidence": "numerical reasoning subcomponents"
+        },
+        {
+          "facet_id": 72,
+          "facet_name": "Openness",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.86,
+          "evidence": "openness"
+        },
+        {
+          "facet_id": 73,
+          "facet_name": "SelfEsteem",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.94,
+          "evidence": "self-esteem"
+        },
+        {
+          "facet_id": 74,
+          "facet_name": "Comparing alphanumeric data",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.86,
+          "evidence": "comparing alphanumeric data"
+        },
+        {
+          "facet_id": 75,
+          "facet_name": "Big-heartedness",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.93,
+          "evidence": "big-heartedness"
+        },
+        {
+          "facet_id": 76,
+          "facet_name": "Compulsive activities",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.84,
+          "evidence": "compulsive activities"
+        },
+        {
+          "facet_id": 77,
+          "facet_name": "FSH level",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.93,
+          "evidence": "FSH level"
+        },
+        {
+          "facet_id": 78,
+          "facet_name": "Self Perspective",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.86,
+          "evidence": "self perspective"
+        },
+        {
+          "facet_id": 80,
+          "facet_name": "Affiliation Motivation",
+          "category": "social",
+          "score": -1,
+          "confidence": 0.94,
+          "evidence": "affiliation motivation"
+        },
+        {
+          "facet_id": 81,
+          "facet_name": "Anatomy knowledge",
+          "category": "other",
+          "score": -2,
+          "confidence": 0.76,
+          "evidence": "anatomy knowledge"
+        },
+        {
+          "facet_id": 82,
+          "facet_name": "Passive-Aggressive",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.94,
+          "evidence": "passive-aggressive"
+        },
+        {
+          "facet_id": 83,
+          "facet_name": "Presence of Spiritual Pain",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.95,
+          "evidence": "presence of spiritual pain"
+        },
+        {
+          "facet_id": 84,
+          "facet_name": "Role of Spirituality in Community Involvement",
+          "category": "social",
+          "score": -2,
+          "confidence": 0.76,
+          "evidence": "role of spirituality in community involvement"
+        },
+        {
+          "facet_id": 85,
+          "facet_name": "Structure",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.93,
+          "evidence": "structure"
+        },
+        {
+          "facet_id": 86,
+          "facet_name": "Eco-tourism trips",
+          "category": "other",
+          "score": -2,
+          "confidence": 0.74,
+          "evidence": "eco-tourism trips"
+        },
+        {
+          "facet_id": 87,
+          "facet_name": "Chivalrousness",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.93,
+          "evidence": "chivalrousness"
+        },
+        {
+          "facet_id": 88,
+          "facet_name": "Pilgrimage participation count",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 89,
+          "facet_name": "Mindfulness facet: Observing",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 90,
+          "facet_name": "Submissiveness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 91,
+          "facet_name": "Training-cycle length",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 92,
+          "facet_name": "Sensitiveness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 93,
+          "facet_name": "Innovation and Creativity Components",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 94,
+          "facet_name": "Achievement Motivation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 95,
+          "facet_name": "Dance-cardio sessions",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 96,
+          "facet_name": "Enthusiasm",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 97,
+          "facet_name": "Inattentiveness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 98,
+          "facet_name": "Decision-making decisiveness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 99,
+          "facet_name": "Sense-of-coherence score",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 100,
+          "facet_name": "Subscription count",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 101,
+          "facet_name": "Spatial perception",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 102,
+          "facet_name": "Orderliness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 103,
+          "facet_name": "Multiculturalism",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 104,
+          "facet_name": "Creative risk-taking tendency",
+          "category": "safety",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "feeling compared to day one"
+        },
+        {
+          "facet_id": 105,
+          "facet_name": "Inefficiency",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 106,
+          "facet_name": "Network basics",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 107,
+          "facet_name": "Alphabetical filing skills",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 108,
+          "facet_name": "Work Styles",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 109,
+          "facet_name": "Character strength: Perseverance",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 110,
+          "facet_name": "Competition",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 111,
+          "facet_name": "Logical Sequence Identification",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 112,
+          "facet_name": "Sustainable-transport usage",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 113,
+          "facet_name": "Hardworking",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 114,
+          "facet_name": "Preferred epistemology",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 115,
+          "facet_name": "Memory for Sounds",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 116,
+          "facet_name": "Sportsmanship rating",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 117,
+          "facet_name": "Immaturity",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 118,
+          "facet_name": "Health-literacy level",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 119,
+          "facet_name": "Estimating Calculations",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 120,
+          "facet_name": "Synthesis of information",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 121,
+          "facet_name": "Leadership Potential",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 122,
+          "facet_name": "Ethical standards",
+          "category": "moral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 123,
+          "facet_name": "High-spiritedness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 124,
+          "facet_name": "Critical reasoning",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 125,
+          "facet_name": "Sleep-disorder diagnosis",
+          "category": "clinical",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "explicitly mentions 'immaturity'"
+        },
+        {
+          "facet_id": 126,
+          "facet_name": "Precision of Movements",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.94,
+          "evidence": "explicitly mentions 'imprecision of movements'"
+        },
+        {
+          "facet_id": 127,
+          "facet_name": "Auditory memory",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 128,
+          "facet_name": "Psychomotor Ability Subcomponents",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 129,
+          "facet_name": "Organized lifestyle",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 130,
+          "facet_name": "Skill-endorsements count",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 131,
+          "facet_name": "Mysteriousness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 132,
+          "facet_name": "Cultural Identity",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 133,
+          "facet_name": "Intrinsic Motivation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 134,
+          "facet_name": "Impartial-mindedness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 135,
+          "facet_name": "Holiness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 136,
+          "facet_name": "Selfcontrol",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "explicitly mentions 'Thirty days is a real milestone'"
+        },
+        {
+          "facet_id": 137,
+          "facet_name": "SelfDirectedness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 138,
+          "facet_name": "Encouraging participation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 139,
+          "facet_name": "Impracticalness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 140,
+          "facet_name": "Meeting Deadlines",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 141,
+          "facet_name": "Data Analysis",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 142,
+          "facet_name": "Psychoticism",
+          "category": "clinical",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 143,
+          "facet_name": "Ethical leadership rating",
+          "category": "moral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 144,
+          "facet_name": "Slothfulness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 145,
+          "facet_name": "Happiness",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.96,
+          "evidence": "explicitly mentions 'feeling compared to day one'"
+        },
+        {
+          "facet_id": 146,
+          "facet_name": "Neuroticism",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 147,
+          "facet_name": "Desire for excellence",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 148,
+          "facet_name": "Perceiving",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 149,
+          "facet_name": "Liberalism",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 150,
+          "facet_name": "Inversion comfort level",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 151,
+          "facet_name": "Numeric Filing Skills",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 152,
+          "facet_name": "Martyrdom",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 153,
+          "facet_name": "Parathyroid-hormone level",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 154,
+          "facet_name": "Seeking approval",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.98,
+          "evidence": "no indication of seeking approval or positive behavior"
+        },
+        {
+          "facet_id": 155,
+          "facet_name": "Judging (J)",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 156,
+          "facet_name": "Big Five facet Openness – Artistic Interests",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 157,
+          "facet_name": "Psychological construct: Operant-Learning rate",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 158,
+          "facet_name": "Psychological construct: Need for Achievement level",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 159,
+          "facet_name": "Cantankerousness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 160,
+          "facet_name": "Material properties knowledge",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 161,
+          "facet_name": "Independence",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 162,
+          "facet_name": "Sufi practice: Sufi retreat attendance count",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 163,
+          "facet_name": "Chromatin-accessibility score",
+          "category": "other",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "direct wording"
+        },
+        {
+          "facet_id": 164,
+          "facet_name": "Spiritual virtue: Humility practice index",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 165,
+          "facet_name": "I Ching hexagram 36 resonance level",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 166,
+          "facet_name": "Well-being component: Engagement",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 167,
+          "facet_name": "Arts and Humanities",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 168,
+          "facet_name": "Religious practice: Quran khatam cycles per year",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 169,
+          "facet_name": "Bahá’í spiritual metric: Ridván festival participation",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 170,
+          "facet_name": "Information Retention",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 171,
+          "facet_name": "Eye-contact duration",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 172,
+          "facet_name": "Self-righteousness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 173,
+          "facet_name": "General Mood and Attitude",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.98,
+          "evidence": "self-righteousness"
+        },
+        {
+          "facet_id": 174,
+          "facet_name": "Serotonin transporter availability",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.96,
+          "evidence": "general mood and attitude"
+        },
+        {
+          "facet_id": 175,
+          "facet_name": "Contribution to Group Goals",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 176,
+          "facet_name": "Dignity",
+          "category": "moral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 177,
+          "facet_name": "HEXACO Personality Inventory Facets",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 178,
+          "facet_name": "Evaluating Solutions",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 179,
+          "facet_name": "Input",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 180,
+          "facet_name": "Discreteness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 181,
+          "facet_name": "Energy-healing practice: Reiki sessions / year",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 182,
+          "facet_name": "Astrology: Rising sign is Scorpio",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 183,
+          "facet_name": "Bravery",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 184,
+          "facet_name": "Childhood Experiences",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 185,
+          "facet_name": "Data-sharing consent level",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 186,
+          "facet_name": "Vision-check frequency",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 187,
+          "facet_name": "Physical-violence exposure",
+          "category": "safety",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 188,
+          "facet_name": "Macronutrient ratio: fat",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 189,
+          "facet_name": "Cooking and Culinary Arts",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 190,
+          "facet_name": "Dance-style mastery diversity",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 191,
+          "facet_name": "Satya Adherence",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 192,
+          "facet_name": "Ethnocentrism",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 193,
+          "facet_name": "Creativity in solutions",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 194,
+          "facet_name": "Psychological construct: Hope scale",
+          "category": "behavioral",
+          "score": 2,
+          "confidence": 0.85,
+          "evidence": "Thirty days is a real milestone. That took effort and discipline — how are you f"
+        },
+        {
+          "facet_id": 195,
+          "facet_name": "Practice frequency: Walking meditation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 196,
+          "facet_name": "Understanding Mathematical Concepts",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 197,
+          "facet_name": "Hypomania (Ma)",
+          "category": "clinical",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 198,
+          "facet_name": "Goal-Directed Behavior",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 199,
+          "facet_name": "Binding foundations index",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 200,
+          "facet_name": "Ego Dissolution Frequency",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 201,
+          "facet_name": "Activator: Turning thoughts into action",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 202,
+          "facet_name": "Gnostic spiritual metric: Archon meditation frequency",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 203,
+          "facet_name": "Exemplariness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 204,
+          "facet_name": "Moral and Ethical Parameters",
+          "category": "moral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 205,
+          "facet_name": "Submission",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 206,
+          "facet_name": "Frankness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 207,
+          "facet_name": "Psychological construct: Psychological Safety climate",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 208,
+          "facet_name": "Psychological construct: Executive-Function composite",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 209,
+          "facet_name": "Rebelliousness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 210,
+          "facet_name": "Volunteer Work",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 211,
+          "facet_name": "Intellect",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 212,
+          "facet_name": "Use of Mathematical Formulas",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 213,
+          "facet_name": "Coarseness",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.97,
+          "evidence": "coarse language and tone"
+        },
+        {
+          "facet_id": 214,
+          "facet_name": "Behavioral Tendencies and Subcomponents",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.96,
+          "evidence": "no positive traits mentioned"
+        },
+        {
+          "facet_id": 215,
+          "facet_name": "Sensitivity",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 216,
+          "facet_name": "Divided Attention Ability",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 217,
+          "facet_name": "Psychological construct: Acculturative Stress score",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 218,
+          "facet_name": "Dauntlessness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 219,
+          "facet_name": "Concreteness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 220,
+          "facet_name": "Hysteria (Hy)",
+          "category": "clinical",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 221,
+          "facet_name": "Jewish spiritual metric: Sukkot lulav-shaking days",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 222,
+          "facet_name": "Esteem Needs",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 223,
+          "facet_name": "Understanding mechanical concepts",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 224,
+          "facet_name": "Auditory Memory Recall",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 225,
+          "facet_name": "Music-lessons years",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 226,
+          "facet_name": "Warmheartedness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 227,
+          "facet_name": "Self-effacement",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 228,
+          "facet_name": "Outspokenness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 229,
+          "facet_name": "Sleep-environment temperature",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 230,
+          "facet_name": "Comprehension of spoken information",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 231,
+          "facet_name": "Blissfulness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 232,
+          "facet_name": "Sequential Memory Recall",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 233,
+          "facet_name": "Withdrawnness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 234,
+          "facet_name": "Hindu spiritual metric: Yoga discipline hours / week",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 235,
+          "facet_name": "Conservatism",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 236,
+          "facet_name": "Hindu spiritual metric: Vrata vows observed / year",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 237,
+          "facet_name": "Ardency",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 238,
+          "facet_name": "Aesthetic Appreciation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 239,
+          "facet_name": "Transactional Leadership",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 240,
+          "facet_name": "Value orientation: Universalism",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 241,
+          "facet_name": "Perseverance",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 242,
+          "facet_name": "Regularity of Self-Reflection",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 243,
+          "facet_name": "Controlling Reactions",
+          "category": "behavioral",
+          "score": 1,
+          "confidence": 0.97,
+          "evidence": "direct wording of 'how are you feeling compared to day one'"
+        },
+        {
+          "facet_id": 244,
+          "facet_name": "Psychological construct: Cultural Intelligence – Behavioral",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 245,
+          "facet_name": "Metabolic Rate (Low or High)",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 246,
+          "facet_name": "Dietary Habits",
+          "category": "behavioral",
+          "score": -2,
+          "confidence": 0.98,
+          "evidence": "brief phrase"
+        },
+        {
+          "facet_id": 247,
+          "facet_name": "Significance: Desire to make an impact",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 248,
+          "facet_name": "Psychological construct: Resilience-Trait score",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 249,
+          "facet_name": "Boredom Susceptibility",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 250,
+          "facet_name": "Psychological construct: Consummatory Pleasure scale",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 251,
+          "facet_name": "Leadership Styles and Behaviors",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 252,
+          "facet_name": "I Ching hexagram 5 resonance level",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 253,
+          "facet_name": "Macronutrient ratio: carbs",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 254,
+          "facet_name": "Passport-stamps count",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 255,
+          "facet_name": "Local-food sourcing %",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 256,
+          "facet_name": "Patient care orientation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 257,
+          "facet_name": "Soft-skill training hours",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 258,
+          "facet_name": "Graffiti appreciation",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 259,
+          "facet_name": "Preference for Home-Cooked vs Restaurant Meals",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 260,
+          "facet_name": "Immune-response age",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 261,
+          "facet_name": "Kink-interest diversity",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 262,
+          "facet_name": "Judging Consequences",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 263,
+          "facet_name": "Affinity",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 264,
+          "facet_name": "Abasement",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.98,
+          "evidence": "abasement"
+        },
+        {
+          "facet_id": 265,
+          "facet_name": "Chronic pain presence",
+          "category": "behavioral",
+          "score": -1,
+          "confidence": 0.97,
+          "evidence": "chronic pain presence"
+        },
+        {
+          "facet_id": 266,
+          "facet_name": "Discernment practice hours / week",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 267,
+          "facet_name": "Courageousness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 268,
+          "facet_name": "Suspicion",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 269,
+          "facet_name": "Basophil count",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 270,
+          "facet_name": "Attachment avoidance score",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 271,
+          "facet_name": "Time Orientation End Points",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 272,
+          "facet_name": "Brazenness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 273,
+          "facet_name": "Talkativeness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 274,
+          "facet_name": "Equitableness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 275,
+          "facet_name": "Ideas generated/day",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 276,
+          "facet_name": "Originality",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 277,
+          "facet_name": "Dance rehearsal hours/week",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 278,
+          "facet_name": "Practice frequency: Mantra meditation",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 279,
+          "facet_name": "Public-transport km/week",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 280,
+          "facet_name": "I Ching hexagram 43 resonance level",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 281,
+          "facet_name": "Disagreeableness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 282,
+          "facet_name": "Participation in Community Activities",
+          "category": "social",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 283,
+          "facet_name": "Impudence",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 284,
+          "facet_name": "Analogies",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 285,
+          "facet_name": "Clumsiness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 286,
+          "facet_name": "Tendency Toward Compromise or Confrontation",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 287,
+          "facet_name": "I Ching hexagram 19 resonance level",
+          "category": "other",
+          "score": -1,
+          "confidence": 0.95,
+          "evidence": "direct wording"
+        },
+        {
+          "facet_id": 288,
+          "facet_name": "Robotics-interaction frequency",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 289,
+          "facet_name": "Casual lifestyle",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 290,
+          "facet_name": "Collectedness",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 291,
+          "facet_name": "Reliance on context",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 292,
+          "facet_name": "Delegation skills",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 293,
+          "facet_name": "I Ching hexagram 49 resonance level",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 294,
+          "facet_name": "Scripture memorization verses",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 295,
+          "facet_name": "Conventional",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 296,
+          "facet_name": "Hindu spiritual metric: Bhagavad-Gita study hours",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 297,
+          "facet_name": "Open-source contributions",
+          "category": "behavioral",
+          "score": 1,
+          "confidence": 0.85,
+          "evidence": "brief phrase"
+        },
+        {
+          "facet_id": 298,
+          "facet_name": "Individuality",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 299,
+          "facet_name": "I Ching hexagram 22 resonance level",
+          "category": "other",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        },
+        {
+          "facet_id": 300,
+          "facet_name": "Attachment style: Secure",
+          "category": "behavioral",
+          "score": 0,
+          "confidence": 0.0,
+          "evidence": "not inferable"
+        }
+      ],
+      "total_facets": 293,
+      "final_turn_score": -1.207,
+      "final_turn_confidence": 0.189,
+      "timestamp": "2026-05-31T08:29:37Z"
+    }
+  ],
+  "final_conversation_score": -1.087,
+  "final_conversation_confidence": 0.206,
+  "meta": {
+    "total_turns": 2,
+    "source": "ollama_api",
+    "score_scale": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ]
+  }
+}

@@ -1,358 +1,156 @@
-﻿ # Ahoum AI Q1 - Conversation Evaluation Platform
+# Ahoum Conversation Evaluation Benchmark
 
-A comprehensive platform for generating, evaluating, and analyzing AI conversations across diverse emotional and contextual scenarios. This project demonstrates the capability to assess how AI models handle complex human interactions including distress, empathy, technical discussions, and edge cases.
+Production-ready benchmark for scoring every conversation turn across hundreds of facets spanning linguistic quality, pragmatics, safety, emotion, behavior, and domain-specific attributes. This project is designed to scale from 300 facets to 5000+ facets without changing the core architecture [file:2][file:256].
 
-## 📋 Table of Contents
+## Overview
 
-- [Overview](#overview)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Conversation Categories](#conversation-categories)
-- [Technologies](#technologies)
-- [Data Files](#data-files)
-- [Contributing](#contributing)
-- [License](#license)
+The system evaluates each turn in a conversation independently, then aggregates turn-level outputs into conversation-level summaries. It uses an open-weights local model pipeline and stores structured JSON outputs with facet scores, confidence, evidence, and final aggregated scores [file:2][file:268][file:269].
 
----
+## Project goals
 
-## 🎯 Overview
+- Score every conversation turn on a large facet set.
+- Support confidence values for each score.
+- Generate at least 50 evaluated conversations for submission.
+- Remain architecture-stable as facet count grows from 300 to 5000+ [file:2].
 
-The Ahoum AI Q1 project is designed to evaluate and analyze AI conversational abilities across multiple dimensions:
+## Expected structure
 
-- **Emotional Intelligence**: How AI responds to distress, empathy, grief, and vulnerability
-- **Communication Styles**: Handling arrogance, sarcasm, hostility, and friendliness
-- **Practical Scenarios**: Real-world decision-making and problem-solving situations
-- **Technical Proficiency**: Explaining complex concepts and debugging code
-- **Ethical Reasoning**: Navigating misinformation, ethics, and bias
-- **Special Cases**: Creative thinking, curiosity, debate, and validation
-
-This platform provides tools to generate, collect, and evaluate these conversations systematically.
-
----
-
-## ✨ Features
-
-- **Multi-Category Conversation Generation**: Create conversations across 16+ different categories
-- **Interactive Streamlit UI**: User-friendly web interface for evaluation and analysis
-- **Extensible Framework**: Easy to add new conversation types and evaluation criteria
-- **Data Processing Pipeline**: Clean, preprocess, and analyze conversation data
-- **Scalable Architecture**: Supports batch processing of multiple conversations
-- **Detailed Facet Analysis**: Track and evaluate conversations across multiple dimensions
-
----
-
-## 📁 Project Structure
-
-```
-ahoum_task1/
-├── README.md                          # Project documentation
-├── requirements.txt                   # Python dependencies
-│
-├── conversations/                     # JSON conversation files
-│   ├── conv_distress_01.json
-│   ├── conv_distress_02.json
-│   ├── conv_empathy_01.json
-│   ├── conv_hostile_01.json
-│   ├── conv_hostile_02.json
-│   ├── conv_arrogant_01.json
-│   ├── conv_creative_01.json
-│   ├── conv_curious_01.json
-│   ├── conv_debate_01.json
-│   ├── conv_decision_01.json
-│   ├── conv_ethics_01.json
-│   ├── conv_friendly_01.json
-│   ├── conv_grief_01.json
-│   ├── conv_misinfo_01.json
-│   ├── conv_sarcasm_01.json
-│   ├── conv_scenario_01-30.json       # 30 comprehensive scenario conversations
-│   ├── conv_spiritual_01.json
-│   ├── conv_technical_01-02.json
-│   ├── conv_validation_01.json
-│   └── conv_vulnerable_01.json
-│
-├── data/                              # Data files
-│   ├── facets_raw.csv                 # Raw evaluation facets
-│   └── facets_cleaned.csv             # Cleaned and processed facets
-│
-├── src/                               # Source code
-│   ├── generate_conversations.py      # Generate new conversations
-│   ├── evaluator.py                   # Evaluation engine
-│   ├── prompt_builder.py              # Build structured prompts
-│   ├── preprocess.py                  # Data preprocessing utilities
-│
-├── ui/                                # User interface
-│   └── app.py                         # Streamlit web application
-│
-└── dockerfile/                        # Docker configuration
+```text
+project/
+├── src/
+│   ├── generate_conversations.py
+│   ├── evaluator.py
+│   ├── prompt_builder.py
+│   └── preprocess.py
+├── conversations/
+│   ├── conv_*.json
+│   └── ...
+├── ui/
+│   └── app.py
+├── Facets-Assignment.csv
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
 ```
 
----
+## Pipeline
 
-## 🔧 Installation
+### 1. Preprocess facets
+
+The facet CSV is cleaned and normalized into a format suitable for prompting, batching, and downstream evaluation. Additional columns can be derived for category, polarity, scoring hints, and prompt grouping to improve scalability [file:2][file:256].
+
+### 2. Build prompts dynamically
+
+Prompt construction should be modular, facet-aware, and batchable. This avoids one-shot prompting and allows the system to scale by splitting large facet inventories into chunks while keeping output schemas consistent [file:2].
+
+### 3. Evaluate turns
+
+Each conversation turn is evaluated with the local model. For every applicable facet, the system stores:
+
+- facet id
+- facet name
+- category
+- score
+- confidence
+- evidence
+
+This structure is already reflected in the generated conversation JSON files [file:268][file:269].
+
+### 4. Aggregate outputs
+
+Turn-level outputs are combined into conversation-level summaries with final conversation score and confidence, along with metadata such as total turns and source [file:269].
+
+## Output format
+
+Each generated conversation JSON should include:
+
+```json
+{
+  "conversation_id": "conv_example_01",
+  "turns": [...],
+  "results": [...],
+  "meta": {
+    "total_turns": 2,
+    "source": "ollama_api"
+  }
+}
+```
+
+Observed outputs in the attached files already follow this pattern, including per-turn facet scoring and metadata fields [file:268][file:269].
+
+## Running locally
 
 ### Prerequisites
 
-- Python 3.8 or higher
-- pip (Python package manager)
-- Virtual environment (recommended)
+- Python 3.10+
+- Ollama installed and running
+- An open-weights model pulled locally, such as Qwen or Llama-family variants allowed by the assignment constraints [file:2]
 
-### Setup Steps
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/hiuchitrajani-pixel/ahoum_task1.git
-   cd ahoum_task1
-   ```
-
-2. **Create a virtual environment**
-   ```bash
-   python -m venv .venv
-   
-   # On Windows
-   .\.venv\Scripts\activate
-   
-   # On macOS/Linux
-   source .venv/bin/activate
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### Dependency Details
-
-| Package | Version | Purpose |
-|---------|---------|---------|
-| pandas | ≥2.0.0 | Data manipulation and analysis |
-| requests | ≥2.31.0 | HTTP requests for API calls |
-| streamlit | ≥1.35.0 | Web application framework |
-
----
-
-## 🚀 Usage
-
-### Running the Web Interface
-
-Start the interactive Streamlit application:
+### Install
 
 ```bash
-# Navigate to the ui directory
-cd ui
-
-# Run the Streamlit app
-streamlit run app.py
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-The app will open in your default browser at `http://localhost:8501`
+### Pull model
 
-**Features:**
-- Browse conversations by category
-- Evaluate AI responses on multiple criteria
-- View analytics and statistics
-- Export evaluation results
-- Dark/Light theme support
-
-### Running Analysis Scripts
-
-#### Generate Conversations
 ```bash
+ollama pull qwen2.5:1.5b
+```
+
+### Generate evaluated conversations
+
+```bash
+export MODEL_NAME=qwen2.5:1.5b
 python src/generate_conversations.py
 ```
-Creates new conversation samples across all categories.
 
-#### Evaluate Conversations
+### Run UI
+
 ```bash
-python src/evaluator.py
+python ui/app.py
 ```
-Runs evaluation metrics on existing conversations.
 
-#### Preprocess Data
+## Docker usage
+
+### Build image
+
 ```bash
-python src/preprocess.py
+docker build -t ahoum-benchmark .
 ```
-Cleans and prepares raw data for analysis.
 
-#### Build Prompts
+### Run container
+
 ```bash
-python src/prompt_builder.py
-```
-Constructs structured prompts for conversation generation.
-
----
-
-## 💬 Conversation Categories
-
-The platform includes **45+ conversation samples** across the following categories:
-
-### Emotional & Psychological (8 categories)
-| Category | Files | Focus |
-|----------|-------|-------|
-| **Distress** | 2 | Handling suicidal ideation and severe emotional pain |
-| **Empathy** | 1 | Compassionate responses to loss and grief |
-| **Grief** | 1 | Deep emotional support for bereavement |
-| **Vulnerable** | 1 | Supporting moments of vulnerability |
-| **Hostile** | 2 | De-escalating aggressive or hostile interactions |
-| **Friendly** | 1 | Maintaining warm, supportive relationships |
-| **Arrogant** | 1 | Responding to overconfident or dismissive users |
-
-### Cognitive & Reasoning (7 categories)
-| Category | Files | Focus |
-|----------|-------|-------|
-| **Technical** | 2 | Explaining complex ML/CS concepts and debugging |
-| **Decision** | 1 | Guiding decision-making processes |
-| **Debate** | 1 | Facilitating balanced argumentation |
-| **Ethics** | 1 | Navigating ethical dilemmas |
-| **Misinfo** | 1 | Correcting misinformation tactfully |
-| **Spiritual** | 1 | Discussing philosophical and spiritual topics |
-| **Creative** | 1 | Encouraging creative expression |
-
-### Practical & Scenario-Based (3 categories)
-| Category | Files | Focus |
-|----------|-------|-------|
-| **Scenarios** | 30 | 30 diverse real-world situations |
-| **Curious** | 1 | Answering curious and exploratory questions |
-| **Validation** | 1 | Providing emotional validation |
-
-### Advanced Communication (1 category)
-| Category | Files | Focus |
-|----------|-------|-------|
-| **Sarcasm** | 1 | Detecting and responding to sarcasm |
-
----
-
-## 💾 Data Files
-
-### facets_raw.csv
-- **Purpose**: Stores raw evaluation data
-- **Contents**: Unprocessed evaluation metrics and scores
-- **Use Case**: Source data for analysis and cleaning
-
-### facets_cleaned.csv
-- **Purpose**: Cleaned and validated evaluation data
-- **Contents**: Processed metrics ready for analysis
-- **Use Case**: Data visualization and statistical analysis
-
-**Typical Facets Evaluated:**
-- Response accuracy
-- Emotional appropriateness
-- Clarity and coherence
-- Technical correctness
-- User satisfaction
-- Context awareness
-
----
-
-## 🛠️ Technologies & Stack
-
-### Backend & Data
-- **Python 3.8+**: Core programming language
-- **Pandas**: Data manipulation and CSV processing
-- **Requests**: API communication
-
-### Frontend & UI
-- **Streamlit**: Interactive web framework
-- **HTML/CSS**: Custom styling for dark/light themes
-
-### Architecture
-- **Modular Design**: Separate concerns (generation, evaluation, preprocessing)
-- **Scalable Pipeline**: Batch processing capability
-- **JSON-Based Storage**: Easy data interchange and versioning
-
-### Deployment
-- **Docker**: Containerized deployment option
-- **Git**: Version control and collaborative development
-
----
-
-## 📊 Analysis Workflow
-
-```
-1. Generation
-   └─> generate_conversations.py
-       └─> Creates new conversation samples
-
-2. Evaluation  
-   └─> evaluator.py
-       └─> Scores and analyzes conversations
-
-3. Preprocessing
-   └─> preprocess.py
-       └─> Cleans and prepares data
-
-4. Visualization
-   └─> ui/app.py
-       └─> Interactive dashboard and reports
+docker run --rm -p 7860:7860   -e MODEL_NAME=qwen2.5:1.5b   -v $(pwd)/conversations:/app/conversations   ahoum-benchmark
 ```
 
----
+### Compose
 
-## 🤝 Contributing
+```bash
+docker compose up --build
+```
 
-We welcome contributions to improve this project!
+## Notes on scaling
 
-### Guidelines
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Make your changes and commit them (`git commit -m 'Add AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+To support 5000+ facets without redesign:
 
-### Areas for Contribution
-- Additional conversation categories
-- Enhanced evaluation metrics
-- UI/UX improvements
-- Performance optimizations
-- Documentation updates
-- Language support
+- Keep facets externalized in CSV or processed config.
+- Batch facets by category or token budget.
+- Use a stable JSON schema for all batches.
+- Merge batch outputs deterministically.
+- Preserve facet metadata separately from inference logic [file:2][file:256].
 
----
+## Submission checklist
 
-## 📝 License
+- GitHub repository with documentation.
+- ZIP containing at least 50 conversations and their scores.
+- Optional deployed UI.
+- Open-weights model usage only [file:2].
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Known observations
 
----
-
-## 👨‍💼 Project Information
-
-**Project**: Ahoum AI Q1  
-**Repository**: [ahoum_task1](https://github.com/hiuchitrajani-pixel/ahoum_task1)  
-**Status**: Active Development  
-**Last Updated**: May 31, 2026
-
----
-
-## 🔗 Quick Links
-
-- [GitHub Repository](https://github.com/hiuchitrajani-pixel/ahoum_task1)
-- [Issue Tracker](https://github.com/hiuchitrajani-pixel/ahoum_task1/issues)
-- [Conversations Directory](./conversations/)
-- [Source Code](./src/)
-
----
-
-## ❓ FAQ
-
-**Q: How do I add a new conversation category?**  
-A: Create a new JSON file in the `conversations/` directory following the existing format, then update the generator to include the new category.
-
-**Q: Can I use this with my own AI model?**  
-A: Yes! The framework is model-agnostic. You can modify `prompt_builder.py` to integrate with your preferred AI service.
-
-**Q: Is Docker support required?**  
-A: No, it's optional. You can run the project directly with Python and Streamlit.
-
-**Q: How are conversations evaluated?**  
-A: The `evaluator.py` script runs multiple metrics including coherence, appropriateness, accuracy, and user satisfaction.
-
----
-
-## 📞 Support
-
-For questions, issues, or suggestions, please open an issue on GitHub or contact the project maintainers.
-
-**Happy Evaluating! 🧠💬**
-
+The attached JSON outputs show that the current system is generating very large per-turn score payloads with confidence and evidence fields, which is aligned with the benchmark objective. However, if the script is not running, the most likely issues are model availability, Ollama connectivity, missing dependencies, or malformed local source files rather than the output format itself [file:268][file:269].
